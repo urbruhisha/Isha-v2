@@ -1,0 +1,575 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*	A CSS rule has the following syntax:
+		selector { property: style; property: style; property: style; }
+	
+	For a list of CSS properties, see the w3Schools website @ http://www.w3schools.com/css/css_reference.asp */
+
+/* https://www.w3schools.com/html/html5_semantic_elements.asp */
+/* https://www.w3schools.com/css/css_rwd_images.asp */
+
+/*	Aisha Fermin
+	o4/18/2026
+	==================================================
+	Table of Contents
+	==================================================
+
+
+/*	Typography
+	================================================== */
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+    body { font-family: 'Roboto', sans-serif; color: #f4c089; font-size: .95em; }
+    h1, h2 { font-family: 'Cinzel Decorative'; font-weight: bolder; font-size: 3em; line-height: 1.1em; }
+    figcaption, footer, .side { font-size: .8em; }
+    .logo { font-size: 3.2em; }
+
+    a:link, a:visited { color: #a94703; }
+    a:hover, a:active { color: #afb2a9; text-decoration: none; }
+
+    li { list-style-type: none; }
+    
+h1 {
+    margin: -10px 0 5px 0;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  color: #f4c089;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 80px;
+
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),
+              url(images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/*	Nav
+	================================================== */
+.topnav {
+  position: fixed; 
+  top: 0;         
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 80px;               
+  align-items: center;
+
+  padding: 20px 0;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(6px);
+
+  z-index: 1000;
+}
+
+
+.topnav {
+  height: 60px;
+  padding: 0;
+}
+
+.topnav a {
+  text-decoration: none;
+  color: #f4c089;
+  transition: all 0.3s ease;
+  line-height: 60px;
+}
+
+.topnav a:hover {
+  color: #afb2a9; /* gold */
+}
+
+.topnav a.current {
+  color: #a94703;
+}
+
+/*	Logo
+	================================================== */
+
+.hero {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: #f4c089;
+}
+
+/* 2001 + logo + 2001 */
+.top-line {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  opacity: 0.7;
+
+  margin-bottom: 25px;
+}
+
+.top-line img {
+  height: 35px;
+}
+
+/* URQUIOLA */
+.hero h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 230px;
+  font-weight: 400;
+  letter-spacing: 6px;
+
+  margin: 10px 0 15px;
+}
+
+/* Function Meets Aesthetic */
+.tagline {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+/*	Biography
+	================================================== */
+
+.section-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.bio-section {
+  padding: 120px 0; 
+  display: flex;
+  justify-content: center;
+}
+
+.bio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+.bio-container {
+  transform: translateY(-80px);
+}
+
+.bio-image img {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+
+  transition: opacity 0.5s ease;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6)
+}
+
+.bio-image img {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.bio-image img.fade-out {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+.bio-image img:hover {
+  transform: scale(1.03);
+}
+
+.bio-text {
+  max-width: 500px;
+  padding: 30px;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+
+  border-radius: 10px;
+}
+.bio-text h2 {
+  font-family: 'Cinzel Decorative', serif;
+  color: #a94703;
+  font-size: 42px;
+  letter-spacing: 3px;
+
+  margin-bottom: 25px;
+}
+
+.bio-text h2 {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.bio-text p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  opacity: 0.85;
+}
+
+
+/*	Work
+	================================================== */
+
+.worknav {
+  position: fixed; 
+  top: 0;         
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 80px;               
+  align-items: center;
+
+  padding: 20px 0;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(6px);
+
+  z-index: 1000;
+}
+
+
+.worknav {
+  height: 50px;
+  padding: 0;
+}
+
+.worknav a {
+  text-decoration: none;
+  color: #f4c089;
+  transition: all 0.3s ease;
+  line-height: 60px;
+}
+
+.worknav a:hover {
+  color: #afb2a9; /* gold */
+}
+
+.worknav a.current {
+  color: #a94703;
+}
+
+/*	Work
+	================================================== */
+
+.works-section {
+  padding: 80px 8% 120px; 
+}
+
+.works-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #a94703;
+    text-align: center;
+}
+
+.info {
+    max-width: 600px;
+  margin: 20px auto 50px;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 15px;
+  grid-auto-flow: dense;
+}
+
+.item {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.item.wide {
+  grid-column: span 2;
+}
+
+.item.tall {
+  grid-row: span 2;
+}
+
+.item.filler .card img {
+  object-fit: cover;
+  background: #000; /* optional */
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  border-radius: 12px;
+  filter: grayscale(100%);
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.item:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.7);
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2000;
+}
+
+.project-content {
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+
+  padding: 40px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+}
+
+.project-container {
+  display: flex;
+  gap: 30px;
+}
+
+.project-image img {
+  width: 350px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.project-text h2 {
+  font-family: 'Cinzel Decorative', serif;
+  color: #a94703;
+}
+
+.project-text p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* close button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #f4c089;
+}
+
+/*	Design
+	================================================== */
+
+.design-philosophy {
+  padding: 50px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.design-philosophy h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #a94703;
+}
+
+.description {
+  max-width: 600px;
+  margin: 20px auto 50px;
+  font-size: 16px; 
+}
+
+.image-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.image-box {
+  width: 320px;
+}
+
+.image-box img {
+  width: 100%;
+  border-radius: 12px;
+  filter: grayscale(100%);
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.image-box img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.image-box p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.design-philosophy h3 {
+  font-family: 'Cinzel Decorative', serif;
+  margin-top: 60px;
+  font-size: 24px;
+  color: #a94703;
+}
+
+.design-philosophy p {
+  max-width: 700px;
+  margin: 15px auto;
+  line-height: 1.6;
+} 
+
+/*	Collab
+	================================================== */
+
+.collaboration {
+     padding: 50px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.collaboration h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #a94703;
+}
+
+.intro {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+    padding: 0 20px;
+    text-align: center;
+}
+
+
+.slideshow-container {
+    width: 96%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    transition: 0.4s ease;
+    filter: grayscale(100%);
+}
+
+.mySlides img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 14px 18px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #2a3f58;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transition: 0.3s ease;
+    user-select: none;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+.slide-text-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 96%;
+    max-width: 1200px;
+    margin: 25px auto 0 auto;
+    text-align: left;
+}
+
+.slide-paragraph {
+    flex: 1;
+    min-width: 280px;
+    display: none;
+    padding: 10px;
+}
+
+.slide-paragraph h3 {
+    color: #a94703;
+    font-family: 'Cinzel Decorative', serif;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.slide-paragraph p {
+    line-height: 1.6;
+    font-size: 15px;
+}

@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+/* Base styles: reset, variables, document defaults */
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ==================================================
+   COLORS
+================================================== */
+
+:root {
+  --cream: #fffaf0;
+  --pink: #f4b5c2;
+  --pink-light: #f9d0d8;
+  --peach: #f3c6a8;
+  --sage: #bccdaf;
+  --sage-light: #d8e1cb;
+  --blue: #b9cfe0;
+  --lavender: #d8c9e7;
+  --yellow: #f8d184;
+  --brown: #55453f;
+  --brown-soft: #75635b;
+
+  --topbar-height: 44px;
+  --taskbar-height: 66px;
+
+
+  /* DEFAULT / PASTEL THEME */
+
+  --theme-1: #bcd8d1;
+  --theme-2: #dbe8df;
+  --theme-3: #f5e7d7;
+  --theme-4: #d8d7ee;
+
+  --theme-accent: #f4b5c2;
+  --theme-accent-light: #f9d0d8;
+}
+
+/* ==================================================
+   COLOR THEMES
+================================================== */
+
+
+/* STRAWBERRY MATCHA */
+
+body.theme-strawberry-matcha {
+  --theme-1: #f4c7cf;
+  --theme-2: #f9dce1;
+  --theme-3: #d6e2ca;
+  --theme-4: #edf2df;
+
+  --theme-accent: #efa9b8;
+  --theme-accent-light: #f8d7de;
+}
+
+
+/* BLUEBERRY */
+
+body.theme-blueberry {
+  --theme-1: #bfd7ea;
+  --theme-2: #d8e5f0;
+  --theme-3: #d8cbea;
+  --theme-4: #fffaf5;
+
+  --theme-accent: #b9b6df;
+  --theme-accent-light: #dedcf2;
+}
+
+
+/* SOFT PINK */
+
+body.theme-soft-pink {
+  --theme-1: #f2bdca;
+  --theme-2: #f8d2da;
+  --theme-3: #fbe3e7;
+  --theme-4: #fff4f1;
+
+  --theme-accent: #eba7b7;
+  --theme-accent-light: #f8d5dd;
+}
+/* ==================================================
+   BODY
+================================================== */
+
+body {
+  overflow: hidden;
+  background: var(--desktop);
+  color: var(--brown);
+  font-family: "Courier New", Courier, monospace;
+}
+
+

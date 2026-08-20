@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Loop Main Menu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="game-screen">
+
+    <!-- LEFT SIDE UI -->
+    <section class="left-ui">
+      <div class="profile-row">
+        <div class="avatar">
+          <img src="images/avatar.png" alt="Player avatar">
+        </div>
+
+        <div class="player-line">
+          <strong>isha</strong>
+          <button class="edit-button">✎</button>
+        </div>
+      </div>
+
+      <div class="stat-block">
+        <div class="stat-title">
+          <span>Stamina</span>
+          <strong>12</strong>
+        </div>
+
+        <div class="bar pink">
+          <span style="width: 60%"></span>
+          <b>6/10</b>
+        </div>
+      </div>
+
+      <div class="stat-block">
+        <div class="stat-title">
+          <span>Producer Rank</span>
+          <strong>4</strong>
+        </div>
+
+        <div class="bar green">
+          <span style="width: 30%"></span>
+          <b>3/10</b>
+        </div>
+      </div>
+
+      <article class="mission-card">
+        <p>Mission</p>
+        <div class="mission-p">
+          <span class="doc-icon">▣</span>
+          <strong>Finish today's project and reach level 10.</strong>
+        </div>
+      </article>
+
+      <article class="event-card">
+        <p>Event</p>
+        <div class="event-image">
+          <span>After Work</span>
+        </div>
+        <strong>After Work</strong>
+      </article>
+    </section>
+
+    <!-- CENTER CHARACTER AREA -->
+    <section class="stage">
+      <div class="speech-bubble" id="speechBubble">
+        I'm not flashy yet. But I know I can be useful to someone.
+      </div>
+
+      <div class="character">
+        <img src="character.png" alt="Main character">
+      </div>
+    </section>
+
+    <!-- TOP RIGHT CURRENCY -->
+    <section class="top-ui">
+      <div class="currency coin">
+        <span>$</span>
+        <b>50</b>
+      </div>
+
+      <div class="currency gem">
+        <span>◆</span>
+        <b>50</b>
+      </div>
+    </section>
+
+    <!-- RIGHT SIDE BUTTONS -->
+    <section class="right-ui">
+      <button class="round-button" data-toast="Menu opened">☰<br>Menu</button>
+      <button class="round-button" data-toast="Gift opened">🎁<br>Gift</button>
+      <button class="round-button" data-toast="News opened">✉<br>News</button>
+    </section>
+
+    <!-- LESSON BUTTON -->
+    <button class="lesson-button" id="lessonButton">
+      <span>Lesson</span>
+      <b>01</b>
+    </button>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+      <button class="active" data-tab="Home">HOME</button>
+      <button data-tab="Story">STORY</button>
+      <button data-tab="Training">TRAINING</button>
+      <button data-tab="Gacha">GACHA</button>
+      <button data-tab="Shop">SHOP</button>
+    </nav>
+
+    <div class="toast" id="toast">Home selected</div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

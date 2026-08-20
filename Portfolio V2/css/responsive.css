@@ -1,0 +1,165 @@
+/* ==================================================
+   RESPONSIVE — ALL MEDIA QUERIES
+================================================== */
+
+@media (max-width: 900px) {
+  .menu-nav {
+    gap: 0;
+  }
+
+  .menu-nav button {
+    padding: 7px 6px;
+  }
+
+  .task-tab {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .menu-bar {
+    padding: 0 12px;
+  }
+
+  .menu-nav {
+    display: none;
+  }
+
+  .top-date {
+    font-size: 12px;
+  }
+
+  .desktop-icons {
+    margin-left: 12px;
+  }
+
+  .window {
+    top: 10%;
+    left: 50%;
+    width: 88vw;
+    transform: translateX(-50%);
+  }
+
+  .task-tab {
+    display: none;
+  }
+
+  .taskbar {
+    padding: 7px 10px;
+  }
+
+  .taskbar-right {
+    gap: 9px;
+  }
+}
+
+@media (max-width: 720px) {
+
+  .welcome-window {
+    top: 7%;
+    left: 50%;
+
+    width: 88vw;
+
+    transform: translateX(-50%);
+  }
+
+
+  .welcome-content {
+    grid-template-columns: 1fr;
+
+    padding: 30px 24px 28px;
+  }
+
+
+  .welcome-character {
+    display: none;
+  }
+
+
+  .welcome-name-row h1 {
+    font-size: 54px;
+  }
+
+
+  .welcome-role {
+    font-size: 12px;
+  }
+
+
+  .speech-bubble {
+    width: 100%;
+  }
+
+
+  .speech-bubble::after {
+    display: none;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .work-window {
+    width: min(560px, 78vw);
+
+    left: 280px;
+  }
+
+  .project-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 720px) {
+
+  .work-window {
+    left: 50%;
+
+    width: 88vw;
+
+    transform:
+      translateX(-50%);
+  }
+
+  .work-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .work-search {
+    width: 100%;
+
+    order: 3;
+  }
+
+  .project-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 22px;
+
+    padding:
+      30px 20px;
+  }
+
+}
+
+@media (max-width: 720px) {
+  .profile-window {
+    left: 50%;
+    width: 88vw;
+    transform: translateX(-50%);
+  }
+
+  .profile-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .profile-row {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}

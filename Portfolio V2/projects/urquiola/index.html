@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title> Project 3 </title>
+        <!-- Aisha Fermin -->
+        <!-- 4/11/2026 -->
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <nav class="topnav" >
+                <a href="index.html" class="current">Biography</a>
+                <a href="works.html">Iconic Works</a>
+                <a href="design.html">Design Philosophy</a>
+                <a href="collab.html">Collaborations</a>
+        </nav>
+        
+        <div class="hero">
+  <div class="top-line">
+    <span>2001</span>
+    <img src="images/logo.png" alt="logo">
+    <span>2001</span>
+  </div>
+
+  <h1>URQUIOLA</h1>
+  <p class="tagline">Function Meets Aesthetic</p>
+</div>
+
+        <section id="biography" class="bio-section">
+  
+  <div class="bio-container">
+      <p class="section-label">01</p>
+  
+   <div class="bio-image">
+    <img id="bio-img" src="images/urquiola1.png" alt="Patricia Urquiola">
+   </div>
+
+    
+    <div class="bio-text">
+      <h2>Biography</h2>
+
+      <p>
+        Patricia Urquiola is a Spanish architect and industrial designer born in 1961 in Oviedo, Spain. She studied architecture in Madrid and later graduated from the Politecnico di Milano under Achille Castiglioni.
+      </p>
+
+      <p>
+        After working with designers like Vico Magistretti, she opened her own studio in Milan in 2001. Her work spans furniture, interiors, architecture, and product design.
+      </p>
+
+      <p>
+        Known for blending functionality with emotion, her designs are often playful, soft, and practical—focused on how people actually live.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+        
+       <script>
+const images = [
+  "images/urquiola1.png",
+  "images/urquiola3.png",
+  "images/urquiola4.jpg"
+];
+
+let index = 0;
+const imgElement = document.getElementById("bio-img");
+
+const timing = 4000; 
+const fadeTime = 600; 
+
+let interval = setInterval(changeImage, timing);
+
+function changeImage() {
+  imgElement.classList.add("fade-out");
+
+  setTimeout(() => {
+    index = (index + 1) % images.length;
+    imgElement.src = images[index];
+    imgElement.classList.remove("fade-out");
+  }, fadeTime);
+}
+
+
+imgElement.addEventListener("mouseenter", () => {
+  clearInterval(interval);
+});
+
+imgElement.addEventListener("mouseleave", () => {
+  clearInterval(interval); 
+  interval = setInterval(changeImage, timing);
+});
+</script>
+        
+    </body>
+</html>

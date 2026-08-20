@@ -1,0 +1,1415 @@
+/* ==================================================
+   APPS — WELCOME, NOTES, CONTACT, PLAYGROUND, PROFILE
+================================================== */
+
+/* ==================================================
+   ABOUT WINDOW CONTENT
+================================================== */
+
+.window-content {
+  padding: 38px;
+}
+
+.eyebrow {
+  margin-bottom: 9px;
+
+  color: #dd8395;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.window-content h1 {
+  width: max-content;
+  max-width: 100%;
+
+  margin-bottom: 22px;
+  padding-bottom: 4px;
+
+  border-bottom: 6px solid rgba(244, 181, 194, 0.65);
+
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1;
+}
+
+.about-copy {
+  max-width: 430px;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.window-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: 30px;
+  padding-top: 25px;
+
+  border-top: 2px dashed var(--pink-light);
+}
+
+.window-tags span {
+  min-width: 120px;
+  padding: 8px 15px;
+
+  text-align: center;
+
+  border: 2px solid var(--brown);
+  border-radius: 7px;
+
+  background: var(--pink-light);
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.window-tags span:nth-child(2) {
+  background: var(--sage-light);
+}
+
+.window-tags span:nth-child(3) {
+  background: var(--lavender);
+}
+
+
+/* ==================================================
+   WELCOME.EXE
+================================================== */
+
+.welcome-window {
+  top: 70px;
+  left: 220px;
+
+  width: 560px;
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+  border-radius: 14px;
+
+  box-shadow: 10px 10px 0 rgba(85, 69, 63, 0.18);
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   WELCOME HEADER
+========================= */
+
+.welcome-window .window-header {
+  min-height: 48px;
+
+  padding: 7px 10px 7px 16px;
+
+  background: linear-gradient(
+    to bottom,
+    #f8c8d1,
+    #f3aebc
+  );
+
+  border-bottom: 3px solid var(--brown);
+}
+
+
+.welcome-window .window-title {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   WELCOME CONTENT
+========================= */
+
+.welcome-content {
+  position: relative;
+
+  min-height: 360px;
+
+  padding: 42px 38px 34px;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.welcome-text {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.welcome-small {
+  margin-bottom: 4px;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.welcome-name-row {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+
+.welcome-name-row h1 {
+  margin: 0;
+
+  font-size: clamp(52px, 7vw, 82px);
+
+  line-height: 0.9;
+
+  letter-spacing: 3px;
+
+  font-weight: 900;
+
+  color: var(--brown);
+
+  text-shadow:
+    3px 3px 0 #f6d4db;
+}
+
+
+.welcome-heart {
+  display: inline-grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  background: var(--pink);
+
+  border: 3px solid var(--brown);
+  border-radius: 50%;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 26px;
+  font-weight: bold;
+
+  transform: rotate(-8deg);
+}
+
+
+/* =========================
+   ROLE PILL
+========================= */
+
+.welcome-role {
+  width: max-content;
+  max-width: 100%;
+
+  margin-bottom: 34px;
+
+  padding: 8px 16px;
+
+  background: #f3aebc;
+
+  border: 3px solid var(--brown);
+  border-radius: 9px;
+
+  box-shadow: 3px 3px 0 rgba(85, 69, 63, 0.15);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================
+   SPEECH BUBBLE
+========================= */
+
+.speech-bubble {
+  position: relative;
+
+  width: 230px;
+
+  padding: 18px 20px;
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+  border-radius: 13px;
+
+  box-shadow: 4px 4px 0 rgba(85, 69, 63, 0.1);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1.45;
+}
+
+
+.speech-bubble {
+  position: relative;
+
+  width: 270px;
+
+  padding: 18px 20px;
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+  border-radius: 13px;
+
+  box-shadow: 4px 4px 0 rgba(85, 69, 63, 0.1);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1.45;
+}
+
+/* ==================================================
+   CSS BUNNY
+================================================== */
+
+.welcome-character {
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+
+.css-bunny {
+  position: relative;
+
+  width: 130px;
+  height: 190px;
+
+  margin-top: 40px;
+}
+
+
+/* ears */
+
+.bunny-ear {
+  position: absolute;
+
+  top: 4px;
+
+  width: 42px;
+  height: 92px;
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+
+  border-radius: 55% 55% 35% 35%;
+
+  z-index: 1;
+}
+
+
+.bunny-ear::after {
+  content: "";
+
+  position: absolute;
+
+  top: 12px;
+  left: 50%;
+
+  width: 17px;
+  height: 58px;
+
+  transform: translateX(-50%);
+
+  background: #f6c2cf;
+
+  border-radius: 50%;
+}
+
+
+.bunny-ear-left {
+  left: 13px;
+
+  transform: rotate(-7deg);
+}
+
+
+.bunny-ear-right {
+  right: 13px;
+
+  transform: rotate(7deg);
+}
+
+
+/* head */
+
+.bunny-head {
+  position: absolute;
+
+  top: 58px;
+  left: 50%;
+
+  width: 102px;
+  height: 92px;
+
+  transform: translateX(-50%);
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+
+  border-radius: 48% 48% 45% 45%;
+
+  z-index: 3;
+}
+
+
+/* eyes */
+
+.bunny-eye {
+  position: absolute;
+
+  top: 38px;
+
+  width: 7px;
+  height: 9px;
+
+  background: var(--brown);
+
+  border-radius: 50%;
+}
+
+
+.bunny-eye-left {
+  left: 28px;
+}
+
+
+.bunny-eye-right {
+  right: 28px;
+}
+
+
+/* mouth */
+
+.bunny-mouth {
+  position: absolute;
+
+  left: 50%;
+  top: 48px;
+
+  transform: translateX(-50%);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+/* blush */
+
+.bunny-head::before,
+.bunny-head::after {
+  content: "";
+
+  position: absolute;
+
+  top: 54px;
+
+  width: 16px;
+  height: 8px;
+
+  background: #f8c8d1;
+
+  border-radius: 50%;
+
+  opacity: 0.8;
+}
+
+
+.bunny-head::before {
+  left: 12px;
+}
+
+
+.bunny-head::after {
+  right: 12px;
+}
+
+
+/* body */
+
+.bunny-body {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 90px;
+  height: 82px;
+
+  transform: translateX(-50%);
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+
+  border-radius: 45% 45% 36% 36%;
+
+  z-index: 2;
+}
+
+
+/* little paws */
+
+.bunny-body::before,
+.bunny-body::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 12px;
+
+  width: 30px;
+  height: 22px;
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+
+  border-radius: 50%;
+}
+
+
+.bunny-body::before {
+  left: -14px;
+
+  transform: rotate(-12deg);
+}
+
+
+.bunny-body::after {
+  right: -14px;
+
+  transform: rotate(12deg);
+}
+
+
+/* ==================================================
+   LITTLE DECORATIONS
+================================================== */
+
+.welcome-content::before {
+  content: "✦";
+
+  position: absolute;
+
+  right: 145px;
+  top: 52px;
+
+  color: var(--yellow);
+
+  font-size: 28px;
+
+  transform: rotate(10deg);
+}
+
+
+.welcome-content::after {
+  content: "♡";
+
+  position: absolute;
+
+  right: 32px;
+  top: 90px;
+
+  color: var(--pink);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 27px;
+
+  transform: rotate(15deg);
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+
+/* ==================================================
+   NOTES.TXT
+================================================== */
+
+.notes-window {
+  top: 170px;
+  right: 85px;
+  left: auto;
+
+  width: 245px;
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+  border-radius: 8px;
+
+  box-shadow:
+    8px 9px 0 rgba(85, 69, 63, 0.16);
+
+  transform: rotate(1deg);
+}
+
+
+/* HEADER */
+
+.notes-window .window-header {
+  min-height: 42px;
+
+  padding:
+    6px 7px 6px 13px;
+
+  background:
+    #f4c4b5;
+
+  border-bottom:
+    3px solid var(--brown);
+}
+
+
+.notes-window .window-title {
+  font-size: 13px;
+}
+
+
+.notes-window .window-control {
+  width: 27px;
+  height: 27px;
+
+  font-size: 15px;
+}
+
+
+/* CONTENT */
+
+.notes-content {
+  position: relative;
+
+  min-height: 245px;
+
+  padding:
+    27px 27px 32px;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 30px,
+      rgba(85, 69, 63, 0.08) 31px
+    ),
+    #fffaf0;
+}
+
+
+/* TEXT */
+
+.notes-content p {
+  margin-bottom: 8px;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+/* LITTLE HEART */
+
+.notes-content::after {
+  content: "♡";
+
+  position: absolute;
+
+  right: 22px;
+  bottom: 18px;
+
+  color: var(--pink);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 24px;
+
+  transform: rotate(-8deg);
+}
+
+/* ==================================================
+   CONTACT.EXE
+================================================== */
+
+.contact-window {
+  top: 150px;
+  right: 120px;
+  left: auto;
+
+  width: 390px;
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+  border-radius: 12px;
+
+  box-shadow:
+    9px 9px 0 rgba(85, 69, 63, 0.16);
+}
+
+
+/* HEADER */
+
+.contact-window .window-header {
+  min-height: 44px;
+
+  padding:
+    6px 8px 6px 14px;
+
+  background:
+    #f6c7cf;
+
+  border-bottom:
+    3px solid var(--brown);
+}
+
+
+/* CONTENT */
+
+.contact-content {
+  padding:
+    28px 28px 30px;
+}
+
+
+.contact-small {
+  margin-bottom: 5px;
+
+  color:
+    #d87f92;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+.contact-content h2 {
+  margin-bottom: 14px;
+
+  font-size: 28px;
+}
+
+
+.contact-copy {
+  margin-bottom: 24px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* EMAIL CARD */
+
+.contact-card {
+  display: grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  gap:
+    5px 10px;
+
+  align-items: center;
+
+  padding:
+    14px 15px;
+
+  background:
+    #fff3f0;
+
+  border:
+    2px solid var(--brown);
+
+  border-radius: 9px;
+
+  box-shadow:
+    3px 3px 0 rgba(85, 69, 63, 0.1);
+}
+
+
+.contact-label {
+  grid-column:
+    1 / -1;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+
+.contact-email {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+.copy-email {
+  padding:
+    6px 10px;
+
+  background:
+    var(--pink-light);
+
+  border:
+    2px solid var(--brown);
+
+  border-radius: 6px;
+
+  color:
+    var(--brown);
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.copy-email:hover {
+  background:
+    var(--pink);
+}
+
+
+/* LINKS */
+
+.contact-links {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+
+.contact-links a {
+  padding:
+    7px 11px;
+
+  background:
+    var(--sage-light);
+
+  border:
+    2px solid var(--brown);
+
+  border-radius: 7px;
+
+  color:
+    var(--brown);
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+
+.contact-links a:hover {
+  transform:
+    translateY(-2px);
+}
+
+/* ==================================================
+   PLAYGROUND.EXE
+================================================== */
+
+.playground-window {
+  top: 115px;
+  right: 150px;
+  left: auto;
+
+  width: 500px;
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+  border-radius: 12px;
+
+  box-shadow:
+    10px 10px 0 rgba(85, 69, 63, 0.16);
+}
+
+
+/* HEADER */
+
+.playground-window .window-header {
+  min-height: 46px;
+
+  padding:
+    7px 9px 7px 15px;
+
+  background:
+    var(--sage);
+
+  border-bottom:
+    3px solid var(--brown);
+}
+
+
+/* CONTENT */
+
+.playground-content {
+  padding:
+    28px;
+}
+
+
+/* INTRO */
+
+.playground-intro {
+  margin-bottom:
+    25px;
+}
+
+
+.playground-small {
+  margin-bottom:
+    5px;
+
+  color:
+    #7d9272;
+
+  font-size:
+    11px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    1.5px;
+}
+
+
+.playground-intro h2 {
+  margin-bottom:
+    10px;
+
+  font-size:
+    30px;
+}
+
+
+.playground-intro p {
+  max-width:
+    400px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size:
+    14px;
+
+  line-height:
+    1.55;
+}
+
+
+/* ==================================================
+   PLAYGROUND GRID
+================================================== */
+
+.playground-grid {
+    
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+
+  gap:12px;
+}
+
+
+/* CARD */
+
+.play-card {
+    
+  position:relative;
+  min-height:105px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:space-between;
+  padding:14px;
+
+  background:#f7efe3;
+  border:2px solid var(--brown);
+  border-radius:9px;
+  box-shadow:3px 3px 0 rgba(85, 69, 63, 0.1);
+
+  color:var(--brown);
+  text-align:left;
+  cursor:pointer;
+  transition:transform 0.15s ease;
+}
+
+.play-card:hover {
+  transform:translateY(-3px);
+}
+
+.play-card:nth-child(2) {
+  background:var(--pink-light);
+}
+
+.play-card:nth-child(3) {
+  background:var(--lavender);
+}
+
+.play-card:nth-child(4) {
+  background:var(--sage-light);
+}
+
+
+/* NUMBER */
+
+.play-number {
+  font-size:11px;
+  font-weight: 800;
+  opacity: 0.6;
+}
+
+
+/* TITLE */
+
+.play-title {
+  font-family: Arial,sans-serif;
+  font-size:15px;
+  font-weight:800;
+}
+
+
+/* ARROW */
+
+.play-arrow {
+  position:absolute;
+  right: 12px;
+  bottom:10px;
+  font-size: 18px;
+}
+
+/* ==================================================
+   SECRET PROFILE WINDOW
+================================================== */
+
+.profile-window {
+  top: 145px;
+  left: 360px;
+  width: 560px;
+  background: #fffaf0;
+  border: 3px solid var(--brown);
+  border-radius: 10px;
+  box-shadow: 9px 10px 0 rgba(85, 69, 63, 0.17);
+}
+
+/* BREADCRUMB */
+
+.profile-breadcrumb {
+  padding: 8px 14px;
+  background: #e3edf1;
+  border-bottom: 2px solid var(--brown);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* BLUE TITLE BAR */
+
+.profile-window .window-header {
+  min-height: 44px;
+  padding: 6px 8px 6px 14px;
+  background: #b9d5e2;
+  border-bottom: 3px solid var(--brown);
+}
+
+/* CONTENT */
+
+.profile-content {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 32px 30px 35px;
+}
+
+.profile-content {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 32px 30px 35px;
+
+  background-color: #fffaf0;
+
+  background-image:
+    linear-gradient(
+      rgba(185, 213, 226, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(185, 213, 226, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 18px 18px;
+}
+
+/* ==================================================
+   AVATAR
+================================================== */
+
+.profile-avatar-area {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-avatar-frame {
+  width: 200px;
+  height: 200px;
+
+  display: grid;
+  place-items: center;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.profile-avatar {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.profile-avatar-heart {
+  position: absolute;
+  right: -3px;
+  bottom: -8px;
+
+  display: grid;
+  place-items: center;
+
+  width: 28px;
+  height: 28px;
+
+  background: #f5c0cc;
+  border: 2px solid var(--brown);
+  border-radius: 50%;
+
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+}
+
+/* ==================================================
+   PROFILE DETAILS
+================================================== */
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.profile-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.profile-label {
+  color: #6e8994;
+  font-size: 10px;
+  letter-spacing: 1.1px;
+}
+
+/* ENERGY */
+
+.profile-hearts {
+  display: flex;
+  gap: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.heart-full {
+  color: #e991a2;
+}
+
+.heart-empty {
+  color: #e991a2;
+  opacity: 0.65;
+}
+
+/* COFFEE */
+
+.coffee-meter {
+  display: flex;
+  gap: 4px;
+  font-family: Arial, sans-serif;
+}
+
+.coffee-full {
+  color: #8fa384;
+}
+
+.coffee-empty {
+  color: #a9988e;
+}
+
+/* ==================================================
+   HELP.EXE
+================================================== */
+
+.help-window {
+  top: 90px;
+  right: 70px;
+  left: auto;
+
+  width: 390px;
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+  border-radius: 12px;
+
+  box-shadow:
+    8px 9px 0 rgba(85, 69, 63, 0.16);
+}
+
+
+/* HEADER */
+
+.help-window .window-header {
+  min-height: 44px;
+
+  padding:
+    6px 8px 6px 14px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #f8e4a9,
+      #f2cf7f
+    );
+
+  border-bottom:
+    3px solid var(--brown);
+}
+
+
+/* CONTENT */
+
+.help-content {
+  padding:
+    25px 26px 26px;
+}
+
+
+.help-small {
+  margin-bottom:
+    5px;
+
+  color:
+    #b38a38;
+
+  font-size:
+    10px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    1.4px;
+}
+
+
+.help-content h2 {
+  margin-bottom:
+    20px;
+
+  font-size:
+    26px;
+}
+
+
+/* HELP LIST */
+
+.help-list {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    14px;
+}
+
+
+.help-item {
+  display:
+    grid;
+
+  grid-template-columns:
+    38px 1fr;
+
+  gap:
+    10px;
+
+  align-items:
+    start;
+}
+
+
+.help-icon {
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  min-height:
+    32px;
+
+  padding:
+    4px;
+
+  background:
+    #fff1c9;
+
+  border:
+    2px solid var(--brown);
+
+  border-radius:
+    6px;
+
+  font-size:
+    13px;
+
+  font-weight:
+    800;
+}
+
+
+.help-item strong {
+  display:
+    block;
+
+  margin-bottom:
+    2px;
+
+  font-size:
+    12px;
+}
+
+
+.help-item p {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.4;
+}
+
+
+/* GOT IT BUTTON */
+
+.help-got-it {
+  display:
+    block;
+
+  margin:
+    22px 0 0 auto;
+
+  padding:
+    8px 14px;
+
+  background:
+    #fff1c9;
+
+  border:
+    2px solid var(--brown);
+
+  border-radius:
+    7px;
+
+  color:
+    var(--brown);
+
+  font-weight:
+    700;
+
+  cursor:
+    pointer;
+}
+
+
+.help-got-it:hover {
+  background:
+    #f8e4a9;
+}
+
+/* ==================================================
+   MOBILE
+================================================== */

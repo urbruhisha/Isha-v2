@@ -1,0 +1,839 @@
+/* ==================================================
+   PROJECTS — WORK BROWSER + PROJECT VIEWER
+================================================== */
+
+/* ==================================================
+   WORK WINDOW
+================================================== */
+
+.work-window {
+  top: 95px;
+  left: 680px;
+
+  width: 620px;
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+  border-radius: 14px;
+
+  box-shadow:
+    10px 10px 0 rgba(85, 69, 63, 0.18);
+
+  overflow: hidden;
+}
+
+
+/* ==================================================
+   WORK HEADER
+================================================== */
+
+.work-window .window-header {
+  min-height: 48px;
+
+  padding:
+    7px 10px 7px 16px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #dce7d2,
+      #b8caa9
+    );
+
+  border-bottom:
+    3px solid var(--brown);
+}
+
+
+/* ==================================================
+   TOOLBAR
+================================================== */
+
+.work-toolbar {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    12px 14px;
+
+  background:
+    #fbf4e8;
+
+  border-bottom:
+    2px solid var(--brown);
+}
+
+
+/* BACK / FORWARD */
+
+.work-navigation {
+  display: flex;
+  gap: 6px;
+}
+
+.work-navigation button {
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  background: #fffaf0;
+
+  border:
+    2px solid var(--brown);
+
+  border-radius: 7px;
+
+  color: var(--brown);
+
+  font-size: 22px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.work-navigation button:hover {
+  background: var(--pink-light);
+}
+
+
+/* ==================================================
+   VIEW BUTTONS
+================================================== */
+
+.view-buttons {
+  display: flex;
+
+  gap: 6px;
+}
+
+.view-button {
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  background: #fffaf0;
+
+  border:
+    2px solid var(--brown);
+
+  border-radius: 7px;
+
+  color: var(--brown);
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.view-button:hover,
+.view-button.active {
+  background:
+    var(--sage-light);
+}
+
+
+/* ==================================================
+   SEARCH
+================================================== */
+
+.work-search {
+  margin-left: auto;
+
+  width: 210px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+
+  padding:
+    0 9px;
+
+  background: #fffaf0;
+
+  border:
+    2px solid var(--brown);
+
+  border-radius: 8px;
+}
+
+.work-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--brown);
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 13px;
+}
+
+.work-search input::placeholder {
+  color: var(--brown-soft);
+
+  opacity: 0.65;
+}
+
+.work-search span {
+  font-size: 18px;
+}
+
+
+/* ==================================================
+   PROJECT GRID
+================================================== */
+
+.project-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 28px;
+
+  padding:
+    38px 34px 32px;
+
+  background: #fffaf0;
+}
+
+
+/* ==================================================
+   PROJECT BUTTON
+================================================== */
+
+.project-folder {
+  position: relative;
+
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    12px 8px;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--brown);
+
+  cursor: pointer;
+}
+
+.project-folder:hover .folder-art {
+  transform:
+    translateY(-5px)
+    rotate(-1deg);
+}
+
+.project-folder:hover .folder-symbol {
+  transform:
+    rotate(5deg);
+}
+
+/* ==================================================
+   FOLDER ART
+================================================== */
+
+.folder-art {
+  position: relative;
+
+  width: 132px;
+  height: 88px;
+
+  display: grid;
+  place-items: center;
+
+  border: 3px solid var(--brown);
+
+  border-radius:
+    10px 10px 12px 12px;
+
+  box-shadow:
+    5px 6px 0 rgba(85, 69, 63, 0.18);
+
+  transition:
+    transform 0.16s ease;
+
+  overflow: visible;
+}
+
+/* TOP FOLDER TAB */
+
+.project-folder-tab {
+  position: absolute;
+
+  top: -18px;
+  left: 10px;
+
+  width: 54px;
+  height: 22px;
+
+  border:
+    3px solid var(--brown);
+
+  border-bottom: none;
+
+  border-radius:
+    9px 9px 0 0;
+
+  z-index: 0;
+}
+
+
+/* SYMBOL */
+
+.folder-symbol {
+  position: relative;
+
+  z-index: 3;
+
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  margin-top: 9px;
+
+  background:
+    #fffaf0;
+
+  border:
+    2px solid var(--brown);
+
+  border-radius: 50%;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 23px;
+  font-weight: bold;
+
+  box-shadow:
+    2px 2px 0 rgba(85, 69, 63, 0.09);
+}
+
+
+/* FRONT FOLDER LAYER */
+
+.folder-art::before {
+  content: "";
+
+  position: absolute;
+
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+
+  height: 66px;
+
+  background: inherit;
+
+  border:
+    3px solid var(--brown);
+
+  border-radius:
+    8px 8px 12px 12px;
+
+  z-index: 1;
+}
+
+
+/* SUBTLE INNER HIGHLIGHT */
+
+.folder-art::after {
+  content: "";
+
+  position: absolute;
+
+  left: 10px;
+  right: 10px;
+  top: 22px;
+
+  height: 3px;
+
+  background:
+    rgba(255, 255, 255, 0.35);
+
+  border-radius: 99px;
+
+  z-index: 2;
+}
+
+
+
+/* ==================================================
+   REWIND
+================================================== */
+
+.project-rewind .folder-art {
+  background:
+    #d9c6e8;
+}
+
+.project-rewind .project-folder-tab {
+  background:
+    #c5acd8;
+}
+
+.project-rewind
+.folder-symbol {
+  color:
+    #8f73aa;
+}
+
+
+/* ==================================================
+   NEKO BREW
+================================================== */
+
+.project-game .folder-art {
+  background:
+    #c4d3b8;
+}
+
+.project-game .project-folder-tab {
+  background:
+    #aebf9f;
+}
+
+
+.project-game
+.folder-symbol {
+  color:
+    #6f8262;
+}
+
+
+/* ==================================================
+   WOODBLOCK
+================================================== */
+
+
+.project-design .folder-art {
+  background:
+    #efb8a8;
+}
+
+.project-design .project-folder-tab {
+  background:
+    #db9d8c;
+}
+.project-design
+.folder-symbol {
+  color:
+    #a86658;
+}
+
+/* ==================================================
+   URQUIOLA
+================================================== */
+
+.project-urquiola .folder-art {
+  background: #f1d59f;
+}
+
+.project-urquiola .project-folder-tab {
+  background: #dfbf80;
+}
+
+.project-urquiola .folder-symbol {
+  color: #9b7a43;
+}
+
+/* ==================================================
+   GAME UI
+================================================== */
+
+.project-game-ui .folder-art {
+  background: #bcd9e5;
+}
+
+.project-game-ui .project-folder-tab {
+  background: #9fc4d3;
+}
+
+.project-game-ui .folder-symbol {
+  color: #648b9c;
+}
+
+/* ==================================================
+   MORE PROJECTS
+================================================== */
+
+.project-more .folder-art {
+  background:
+    #f3eadc;
+}
+
+.project-more .project-folder-tab {
+  background:
+    #ddd0bd;
+}
+
+/* ==================================================
+   PROJECT NAME
+================================================== */
+
+.project-name {
+  max-width: 135px;
+
+  padding:
+    5px 9px;
+
+  background:
+    rgba(255, 250, 240, 0.92);
+
+  border-radius:
+    5px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.5px;
+
+  text-align: center;
+}
+
+
+/* ==================================================
+   FAVORITE STAR
+================================================== */
+
+.project-star {
+  position: absolute;
+
+  top: 7px;
+  right: 7px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 18px;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.project-folder:hover
+.project-star {
+  opacity: 1;
+
+  transform:
+    rotate(10deg);
+}
+
+
+/* ==================================================
+   WORK FOOTER
+================================================== */
+
+.work-footer {
+  padding:
+    10px 18px;
+
+  background:
+    #fbf4e8;
+
+  border-top:
+    2px solid var(--brown);
+
+  font-size:
+    12px;
+
+  font-weight: 700;
+
+  text-align: right;
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+
+
+
+/* ==================================================
+   PROJECT VIEWER
+================================================== */
+
+.project-viewer {
+  top: 35px;
+  left: 160px;
+
+  width: calc(100% - 320px);
+  height: calc(100% - 70px);
+
+  background: #fffaf0;
+
+  border: 3px solid var(--brown);
+  border-radius: 12px;
+
+  box-shadow:
+    10px 10px 0 rgba(85, 69, 63, 0.18);
+
+  overflow: hidden;
+}
+
+
+.project-viewer .window-header {
+  min-height: 46px;
+}
+
+
+.project-viewer-content {
+  width: 100%;
+  height: calc(100% - 46px);
+
+  background: white;
+}
+
+
+.project-viewer iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+
+  background: white;
+}
+
+/* ==================================================
+   PROJECT VIEWER STATES
+================================================== */
+
+.project-viewer {
+  transition:
+    width 0.18s ease,
+    height 0.18s ease,
+    top 0.18s ease,
+    left 0.18s ease,
+    border-radius 0.18s ease;
+}
+
+
+/* MAXIMIZED */
+
+.project-viewer.maximized {
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  border-radius: 0;
+
+  transform: none !important;
+
+  box-shadow: none;
+}
+
+
+/* MINIMIZED */
+
+.project-viewer.minimized {
+  display: none;
+}
+
+
+/* PROJECT TASKBAR TAB */
+
+.project-task-tab {
+  max-width: 190px;
+}
+
+.project-task-tab[hidden] {
+  display: none;
+}
+
+/* ==================================================
+   PROJECT LOADING SCREEN
+================================================== */
+
+.project-viewer-content {
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* LOADER OVERLAY */
+
+.project-loader {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 10;
+
+  display: grid;
+  place-items: center;
+
+  background: #fffaf0;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+
+/* SHOW LOADER */
+
+.project-loader.loading {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* CENTER CONTENT */
+
+.project-loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 14px;
+
+  color: var(--brown);
+
+  text-align: center;
+}
+
+
+/* HEART */
+
+.loader-heart {
+  font-size: 34px;
+
+  animation:
+    loader-heart 0.8s ease-in-out infinite alternate;
+}
+
+
+@keyframes loader-heart {
+
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.15);
+  }
+
+}
+
+
+/* TEXT */
+
+.project-loader p {
+  margin: 0;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* ==================================================
+   LOADING BLOCKS
+================================================== */
+
+.loader-blocks {
+  display: flex;
+
+  gap: 5px;
+}
+
+
+.loader-blocks span {
+  width: 13px;
+  height: 13px;
+
+  background: transparent;
+
+  border: 2px solid var(--brown);
+
+  border-radius: 2px;
+
+  animation:
+    loader-block 1s infinite;
+}
+
+
+.loader-blocks span:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+
+.loader-blocks span:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+
+.loader-blocks span:nth-child(4) {
+  animation-delay: 0.36s;
+}
+
+
+.loader-blocks span:nth-child(5) {
+  animation-delay: 0.48s;
+}
+
+
+@keyframes loader-block {
+
+  0%,
+  100% {
+    background: transparent;
+  }
+
+  50% {
+    background: var(--pink);
+  }
+
+}
+
+.project-viewer.minimized {
+  display: none;
+}

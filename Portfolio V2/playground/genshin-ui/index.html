@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aisha Profile Showcase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+
+<div id="loading-screen">
+  <div class="loading-background"></div>
+
+  <div class="loading-content">
+    <img src="images/binalogo.png" alt="Portfolio Logo" class="loading-logo">
+
+    <p>Inspired by Genshin Impact</p>
+
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+
+    <span class="loading-text">Entering...</span>
+  </div>
+</div>
+    
+  <main class="game-profile" id="gameProfile">
+
+    <!-- LEFT PAGE -->
+    <section class="profile-page left-page">
+
+      <div class="profile-banner">
+  <p class="banner-uid">UID 311280207</p>
+
+  <div class="banner-avatar">
+    <img src="images/profile.png" alt="Profile avatar">
+  </div>
+
+  <h1>Isha</h1>
+  </div>
+
+      <div class="rank-box">
+        <div>
+          <span>Adventure Rank</span>
+          <strong>60</strong>
+        </div>
+
+        <div>
+          <span>World Level</span>
+          <strong>9</strong>
+        </div>
+      </div>
+
+      <div class="profile-note">
+        <p>This archive was created solely for portfolio and learning purposes. Genshin Impact and all associated characters, artwork, and intellectual property belong to HoYoverse.</p>
+      </div>
+
+      <div class="stats-list">
+
+        <div class="skill">
+
+    <span class="skill-name">Attack</span>
+
+    <div class="skill-bar">
+        <div class="skill-fill" style="width:100%;"></div>
+    </div>
+
+    <span class="skill-level">100</span>
+
+        </div>
+
+        <div class="skill">
+
+    <span class="skill-name">Elemental Mastery</span>
+
+    <div class="skill-bar">
+        <div class="skill-fill" style="width:80%;"></div>
+    </div>
+
+    <span class="skill-level">80</span>
+
+        </div>
+
+        <div class="skill">
+
+    <span class="skill-name">Crit Rate</span>
+
+    <div class="skill-bar">
+        <div class="skill-fill" style="width:70%;"></div>
+    </div>
+
+    <span class="skill-level">70</span>
+
+        </div>
+
+        <div class="skill">
+
+    <span class="skill-name">Crit Damage</span>
+
+    <div class="skill-bar">
+        <div class="skill-fill" style="width:100%;"></div>
+    </div>
+
+    <span class="skill-level">100</span>
+
+        </div>
+
+        <div class="skill">
+
+    <span class="skill-name">Energy Recharge</span>
+
+    <div class="skill-bar">
+        <div class="skill-fill" style="width:90%;"></div>
+    </div>
+
+    <span class="skill-level">90</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RIGHT PAGE -->
+    <section class="profile-page right-page">
+
+      <div class="tabs">
+        <button class="active">Character Showcase</button>
+        <button>Namecard</button>
+      </div>
+
+      <div class="character-grid">
+
+<button class="character-card"
+  data-name="Xiao"
+  data-folder="xiaoimages"
+  data-title="Vigilant Yaksha"
+  data-element="Anemo"
+  data-weapon="Polearm"
+  data-region="Liyue"
+  data-affiliation="Adepti"
+  data-constellation="Alatus Nemeseos"
+  data-image="images/xiao-full.png"
+  data-description="One of the mighty and illuminated adepti guarding Liyue. Although he appears to be a young man, occasional legends about him have been documented in ancient books for thousands of years.">
+
+  <img class="element-icon" src="images/anemo.png" alt="Anemo">
+  <img class="character-image" src="images/xiao.png" alt="Xiao">
+
+</button>
+
+<button class="character-card"
+  data-name="Kinich"
+  data-title="Turnfire Hunt"
+  data-element="Dendro"
+  data-weapon="Claymore"
+  data-region="Natlan"
+  data-affiliation="Huitztlan"
+  data-constellation="Chimaera Alebriius"
+  data-folder="kinichimages"
+  data-description="A Saurian Hunter from Natlan who takes commissions for the right price. Calm, sharp, and always ready to finish the job.">
+
+  <img class="element-icon" src="images/dendro.png" alt="Dendro">
+  <img class="character-image" src="images/kinich.png" alt="Kinich">
+  
+</button>
+
+<button class="character-card"
+  data-name="Nefer"
+  data-title="Secret Beneath the Sands"
+  data-element="Dendro"
+  data-weapon="Catalyst"
+  data-region="Sumeru"
+  data-affiliation="Curatorium of Secrets"
+  data-constellation="Ludus Latrunculorum"
+  data-folder="neferimages"
+  data-description="The head of the Curatorium of Secrets and a member of the Voynich Guild. Incredibly calculating and knowledgeable, Nefer is said to possess an uncanny ability to predict the future.">
+
+  <img class="element-icon" src="images/dendro.png" alt="Dendro">
+  <img class="character-image" src="images/nefer.png" alt="Nefer">
+
+  
+</button>
+
+  <button class="character-card"
+  data-name="Flins"
+  data-title="Shadowy Lights, Stranger Wights"
+  data-element="Electro"
+  data-weapon="Polearm"
+  data-region="Nod-Krai"
+  data-affiliation="Lightkeepers"
+  data-constellation="Laterna Vigilis"
+  data-folder="flinsimages"
+  data-description="A member of the mysterious Lightkeepers who walks beneath the endless night. Quiet and resolute, Flins illuminates the darkness while guarding secrets few are meant to know.">
+
+  <img class="element-icon" src="images/electro.png" alt="Electro">
+  <img class="character-image" src="images/flins.png" alt="Flins">
+
+
+</button>
+
+<button class="character-card"
+  data-name="Wanderer"
+  data-title="Eons Adrift"
+  data-element="Anemo"
+  data-weapon="Catalyst"
+  data-region="Sumeru"
+  data-affiliation="Vahumana"
+  data-constellation="Peregrinus"
+  data-folder="wandererimages"
+  data-description="A wayfarer whose identity is a mystery. Once known by many names, he now wanders the world seeking his own path and purpose.">
+
+  <img class="element-icon" src="images/anemo.png" alt="Anemo">
+  <img class="character-image" src="images/wanderer.png" alt="Wanderer">
+
+
+</button>
+
+<button class="character-card"
+  data-name="Furina"
+  data-title="Endless Solo of Solitude"
+  data-element="Hydro"
+  data-weapon="Sword"
+  data-region="Fontaine"
+  data-affiliation="Salon Members"
+  data-constellation="Animula Choragi"
+  data-folder="furinaimages"
+  data-description="The former Hydro Archon of Fontaine. Behind her theatrical charm lies a compassionate heart that endured centuries of solitude for the sake of her people.">
+
+  <img class="element-icon" src="images/hydro.png" alt="Hydro">
+  <img class="character-image" src="images/furina.png" alt="Furina">
+
+
+</button>
+
+<button class="character-card"
+  data-name="Skirk"
+  data-title="Void Star"
+  data-element="Cryo"
+  data-weapon="Sword"
+  data-region="???"
+  data-affiliation="The Abyss"
+  data-constellation="Crystallina"
+  data-folder="skirkimages"
+  data-description="A mysterious swordswoman from the depths of the Abyss and the mentor of Tartaglia. Few know her true origins, and fewer still can match her mastery of the blade.">
+
+  <img class="element-icon" src="images/cryo.png" alt="Cryo">
+  <img class="character-image" src="images/skirk.png" alt="Skirk">
+
+
+</button>
+
+<button class="character-card"
+  data-name="Neuvillette"
+  data-title="Ordainer of Inexorable Judgment"
+  data-element="Hydro"
+  data-weapon="Catalyst"
+  data-region="Fontaine"
+  data-affiliation="Court of Fontaine"
+  data-constellation="Leviathan Judicator"
+  data-folder="neuvilletteimages"
+  data-description="The Iudex of Fontaine, renowned for his unwavering sense of justice. Beneath his composed demeanor lies a profound understanding of humanity and a power that transcends mortal origins.">
+
+  <img class="element-icon" src="images/hydro.png" alt="Hydro">
+  <img class="character-image" src="images/neuvillette.png" alt="Neuvillette">
+
+
+</button>
+
+<button class="character-card"
+  data-name="Columbina"
+  data-title="Welkin Moon's Homecoming"
+  data-element="Hydro"
+  data-weapon="Catalyst"
+  data-region="Nod-Krai"
+  data-affiliation="Frost Moon"
+  data-constellation="Columbina Hyposelenia"
+  data-folder="columbinaimages"
+  data-description="The Moon Maiden of Nod-Krai. Once known as the Damselette, she now walks her own path, carrying countless memories beneath the quiet light of the moon.">
+
+  <img class="element-icon" src="images/hydro.png" alt="Hydro">
+  <img class="character-image" src="images/columbina.png" alt="Columbina">
+
+
+</button>
+
+</div>
+
+    </section>
+
+<section class="showcase-screen" id="showcaseScreen">
+
+  <div class="showcase-bg"></div>
+  <div class="showcase-overlay"></div>
+
+  <button class="showcase-close" id="showcaseClose">×</button>
+
+  <aside class="showcase-panel">
+
+  <div class="intro-card">
+    <img src="images/xiaoimages/intro.png" alt="Xiao introduction banner">
+  </div>
+
+  <div class="about-card">
+    <h3>About Xiao</h3>
+    <p>
+      One of the mighty and illuminated adepti guarding Liyue.
+      Also known as the Vigilant Yaksha.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <h3>Character Information</h3>
+    <div class="stars">★★★★★</div>
+
+    <p><strong>Element</strong><span>Anemo</span></p>
+    <p><strong>Weapon</strong><span>Polearm</span></p>
+    <p><strong>Region</strong><span>Liyue</span></p>
+    <p><strong>Affiliation</strong><span>Adepti</span></p>
+    <p><strong>Constellation</strong><span>Alatus Nemeseos</span></p>
+  </div>
+
+</aside>
+
+<div class="showcase-gallery-big">
+
+  <div class="gallery-slider">
+    <img src="images/xiaoimages/art1.png" alt="Xiao artwork">
+    <img src="images/xiaoimages/art2.png" alt="Xiao artwork 2">
+    <img src="images/xiaoimages/art3.png" alt="Xiao artwork 3">
+    <img src="images/xiaoimages/art4.png" alt="Xiao artwork 4">
+    <img src="images/xiaoimages/art5.png" alt="Xiao artwork 5">
+  </div>
+</div>
+
+  <div class="showcase-title">
+    <h2>XIAO</h2>
+    <p>Vigilant Yaksha</p>
+    <span>★★★★★</span>
+  </div>
+
+
+ <img class="showcase-character"
+     src="images/xiaoimages/splash1.png"
+     alt="Xiao full art">
+
+<div class="showcase-skills">
+  <button>
+    <img src="images/xiaoimages/skill1.png" alt="">
+    <span>Skill</span>
+  </button>
+
+  <button>
+    <img src="images/xiaoimages/skill2.png" alt="">
+    <span>Burst</span>
+  </button>
+
+  <button>
+    <img src="images/xiaoimages/cons.png" alt="">
+    <span>Constellation</span>
+  </button>
+</div>
+
+</section>
+
+  </main>
+
+<script>
+window.addEventListener("load", () => {
+  const splash = document.getElementById("loading-screen");
+  const game = document.getElementById("gameProfile");
+
+  setTimeout(() => {
+    splash.classList.add("hide");
+    game.classList.add("show");
+  }, 2500);
+});
+</script>
+
+<script>
+  const characterCards = document.querySelectorAll(".character-card[data-name]");
+  const showcaseScreen = document.getElementById("showcaseScreen");
+  const showcaseClose = document.getElementById("showcaseClose");
+
+  const showcaseBg = document.querySelector(".showcase-bg");
+  const introImg = document.querySelector(".intro-card img");
+  const aboutTitle = document.querySelector(".about-card h3");
+  const aboutText = document.querySelector(".about-card p");
+  const infoRows = document.querySelectorAll(".info-card p span");
+  const titleName = document.querySelector(".showcase-title h2");
+  const titleSubtitle = document.querySelector(".showcase-title p");
+  const showcaseCharacter = document.querySelector(".showcase-character");
+  const skillImgs = document.querySelectorAll(".showcase-skills img");
+  const galleryImgs = document.querySelectorAll(".gallery-slider img");
+
+  characterCards.forEach(card => {
+    card.addEventListener("click", () => {
+      const name = card.dataset.name;
+      const folder = card.dataset.folder || "xiaoimages";
+
+      showcaseBg.style.backgroundImage = `url("images/${folder}/background.png")`;
+      introImg.src = `images/${folder}/intro.png`;
+      introImg.alt = `${name} introduction banner`;
+
+      aboutTitle.textContent = `About ${name}`;
+      aboutText.textContent = card.dataset.description;
+
+      infoRows[0].textContent = card.dataset.element;
+      infoRows[1].textContent = card.dataset.weapon;
+      infoRows[2].textContent = card.dataset.region;
+      infoRows[3].textContent = card.dataset.affiliation;
+      infoRows[4].textContent = card.dataset.constellation;
+
+      titleName.textContent = name.toUpperCase();
+      titleSubtitle.textContent = card.dataset.title;
+
+      showcaseCharacter.src = `images/${folder}/splash1.png`;
+      showcaseCharacter.alt = `${name} full art`;
+
+      skillImgs[0].src = `images/${folder}/skill1.png`;
+      skillImgs[1].src = `images/${folder}/skill2.png`;
+      skillImgs[2].src = `images/${folder}/cons.png`;
+
+      galleryImgs[0].src = `images/${folder}/art1.png`;
+      galleryImgs[1].src = `images/${folder}/art2.png`;
+      galleryImgs[2].src = `images/${folder}/art3.png`;
+      galleryImgs[3].src = `images/${folder}/art1.png`;
+      galleryImgs[4].src = `images/${folder}/art2.png`;
+
+      showcaseScreen.classList.add("active");
+    });
+  });
+
+  showcaseClose.addEventListener("click", () => {
+    showcaseScreen.classList.remove("active");
+  });
+</script>
+    
+</body>
+</html>

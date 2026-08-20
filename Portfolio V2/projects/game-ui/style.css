@@ -1,0 +1,318 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*	A CSS rule has the following syntax:
+		selector { property: style; property: style; property: style; }
+	
+	For a list of CSS properties, see the w3Schools website @ http://www.w3schools.com/css/css_reference.asp */
+
+/* https://www.w3schools.com/html/html5_semantic_elements.asp */
+/* https://www.w3schools.com/css/css_rwd_images.asp */
+
+/*	Aisha Fermin
+	==================================================
+	Table of Contents
+	==================================================
+		:: Typography
+	==================================================
+*/
+/*	Typography
+	================================================== */
+ @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+    body { font-family: 'Sour Gummy', sans-serif; color: white; font-size: .95em; }
+}
+.player-line, .b, .stat-title, .mission-p {
+    font-family: 'Sour Gummy', sans-serif;
+}
+
+/*	Typography
+	================================================== */
+ {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Sour Gummy', sans-serif;
+  background: #8cc9ff;
+  overflow: hidden;
+}
+
+.game-screen {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #eef7ff 0%, #77bfff 45%, #3c8fe8 100%);
+  color: #46494f;
+}
+
+/* LEFT UI */
+.left-ui {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 280px;
+  z-index: 5;
+}
+
+.profile-row,
+.mission-card,
+.event-card {
+  background: white;
+  border: 4px solid #46494f;
+  border-radius: 24px;
+  padding: 14px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 0 #46494f;
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: pink;
+  border: 4px solid #46494f;
+}
+
+.player-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-button {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.stat-block {
+  margin-bottom: 16px;
+}
+
+.stat-title {
+  font-family: 'Sour Gummy', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.bar {
+  position: relative;
+  height: 24px;
+  background: white;
+  border: 4px solid #46494f;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+}
+
+.bar.pink span {
+  background: #ff4fb3;
+}
+
+.bar.green span {
+  background: #59e6a2;
+}
+
+.bar b {
+  position: absolute;
+  right: 15px;
+  top: 1px;
+  color: white;
+  text-shadow: 1px 1px #46494f;
+}
+
+/* CENTER STAGE */
+.stage {
+  position: absolute;
+  inset: 0;
+}
+
+.character {
+  position: absolute;
+  left: 50%;
+  bottom: 90px;
+  transform: translateX(-50%);
+  width: 360px;
+  height: 560px;
+  background: rgba(255,255,255,0.4);
+  border: 5px dashed white;
+  border-radius: 40px;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  animation: float 3s ease-in-out infinite;
+}
+
+.character::before {
+  content: "Character Image Here";
+}
+
+.speech-bubble {
+  font-family: 'Sour Gummy', sans-serif;
+  position: absolute;
+  top: 120px;
+  right: 240px;
+  width: 330px;
+  background: white;
+  padding: 24px;
+  border-radius: 35px;
+  border: 4px solid #dbe9ff;
+  font-weight: bold;
+  z-index: 4;
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 60px;
+  border-width: 25px 18px 0 18px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+/* TOP RIGHT MONEY */
+.top-ui {
+  position: absolute;
+  top: 24px;
+  right: 180px;
+  display: flex;
+  gap: 16px;
+  z-index: 6;
+}
+
+.currency {
+  background: #46494f;
+  color: white;
+  border-radius: 999px;
+  padding: 8px 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* RIGHT BUTTONS */
+.right-ui {
+  position: absolute;
+  top: 40px;
+  right: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 6;
+}
+
+.round-button {
+  font-family: 'Sour Gummy', sans-serif;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  border: 5px solid white;
+  background: #46494f;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #46494f;
+}
+
+.round-button:hover {
+  transform: scale(1.08);
+}
+
+/* LESSON BUTTON */
+.lesson-button {
+  font-family: 'Sour Gummy', sans-serif;
+  position: absolute;
+  right: 110px;
+  bottom: 100px;
+  background: white;
+  border: 6px solid #46494f;
+  border-radius: 28px;
+  padding: 18px 34px;
+  color: #46494f;
+  font-size: 28px;
+  font-weight: bold;
+  transform: rotate(-4deg);
+  cursor: pointer;
+  z-index: 7;
+  box-shadow: 0 8px 0 #46494f;
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 24px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: white;
+  border: 4px solid #46494f;
+  border-radius: 18px;
+  overflow: hidden;
+  z-index: 8;
+}
+
+.bottom-nav button {
+  font-family: 'Sour Gummy', sans-serif;
+  padding: 18px;
+  border: none;
+  border-right: 2px solid #b7c8ff;
+  background: white;
+  color: #46494f;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bottom-nav button.active,
+.bottom-nav button:hover {
+  background: #46494f;
+  color: white;
+}
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 95px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #1e3f9e;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 999px;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 20;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}

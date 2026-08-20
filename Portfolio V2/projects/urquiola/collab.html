@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title> Project 3 </title>
+        <!-- Aisha Fermin -->
+        <!-- 4/11/2026 -->
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body class="collab-page">
+        <nav class="topnav" >
+                <a href="index.html">Biography</a>
+                <a href="works.html">Iconic Works</a>
+                <a href="design.html">Design Philosophy</a>
+                <a href="collab.html" class="current">Collaborations</a>
+        </nav>
+    
+<section class="collaboration">
+  <h2>Collaborations</h2>
+
+  <p class="intro">
+    This page highlights Patricia Urquiola’s furniture collaborations with leading designers and brands in the design world. It showcases how she blends creativity, innovation, and different design influences to create iconic pieces.
+  </p>
+
+  <div class="slideshow-container">
+
+    <!-- SLIDE 1 -->
+    <div class="mySlides">
+        <img src="images/collab1.png" alt="B&B Italia">
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="mySlides">
+        <img src="images/collab2.png" alt="Moroso">
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="mySlides">
+        <img src="images/collab3.png" alt="Cassina">
+    </div>
+
+    <!-- arrows -->
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+  </div>
+
+  <!-- TEXT BELOW SLIDESHOW -->
+  <div class="slide-text-content">
+
+    <!-- TEXT 1 -->
+    <div class="slide-paragraph">
+        <h3>Patricia Urquiola + B(&)B Italia</h3>
+        <p>
+            Her iconic Tufty-Time Sofa (2005) for B(&)B Italia reinterpreted classic Chesterfield tufting with a modern modular system, often discussed alongside Mario Bellini’s influential upholstered furniture concepts. It became one of her most famous furniture collaborations with a heritage design house.
+        </p>
+    </div>
+
+    <!-- TEXT 2 -->
+    <div class="slide-paragraph">
+        <h3>Patricia Urquiola + Moroso</h3>
+        <p>
+            Her long-running partnership with Moroso produced pieces like the Fjord Chair and Antibodi Chair, where she worked within Moroso’s artist-designer ecosystem that included names like Ron Arad and Tokujin Yoshioka. This collaboration is one of the clearest examples of Urquiola working inside a broader designer collective culture.
+        </p>
+    </div>
+
+    <!-- TEXT 3 -->
+    <div class="slide-paragraph">
+        <h3>Patricia Urquiola + Cassina</h3>
+        <p>
+            As art director and designer for Cassina, Urquiola’s work connects directly to the legacy of mentors like Achille Castiglioni and Vico Magistretti, whose philosophies shaped her. Collections like Bowy and Floe Insel reflect this generational collaboration between classic Italian masters and Urquiola’s softer contemporary forms.
+        </p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let paragraphs = document.getElementsByClassName("slide-paragraph");
+
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.display = "none";
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  paragraphs[slideIndex - 1].style.display = "block";
+}
+</script>
+ 
+</body>
+</html>
