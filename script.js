@@ -1009,7 +1009,7 @@ const playgroundProjects = {
 
   "brand-identities": {
     title: "brand-identities.exe",
-    page: "playground/brand.pdf"
+    page: "playground/brands.pdf"
   }
 
 };
