@@ -926,7 +926,7 @@ const projects = {
 
   "game-ui": {
     title: "game-ui.exe",
-    page: "projects/game-ui/index.html"
+    page: "projects/bdlee/index.html"
   }
 
 };
@@ -994,7 +994,7 @@ const playgroundProjects = {
 
   "ui-tests": {
     title: "ui-tests.exe",
-    page: "playground/ui-test/index"
+    page: "playground/ui-test/index.html"
   },
 
 "motion": {
