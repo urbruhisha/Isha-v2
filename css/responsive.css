@@ -1,165 +1,703 @@
 /* ==================================================
-   RESPONSIVE — ALL MEDIA QUERIES
+   RESPONSIVE — ISHA V2
 ================================================== */
 
-@media (max-width: 900px) {
+
+/* ==================================================
+   MEDIUM / TABLET
+   721px — 1100px
+================================================== */
+
+@media (max-width: 1100px) {
+
+  /* ------------------------------
+     TOP BAR
+  ------------------------------ */
+
+  .menu-bar {
+    padding: 0 16px;
+  }
+
+  .menu-left {
+    gap: 14px;
+  }
+
   .menu-nav {
     gap: 0;
   }
 
   .menu-nav button {
     padding: 7px 6px;
+    font-size: 13px;
   }
 
-  .task-tab {
-    min-width: auto;
-  }
-}
-
-@media (max-width: 720px) {
-  .menu-bar {
-    padding: 0 12px;
+  .menu-right {
+    gap: 12px;
   }
 
-  .menu-nav {
-    display: none;
+  .top-status {
+    gap: 8px;
   }
 
   .top-date {
     font-size: 12px;
   }
 
+
+  /* ------------------------------
+     DESKTOP ICONS
+  ------------------------------ */
+
   .desktop-icons {
-    margin-left: 12px;
+    width: 105px;
+
+    margin-left: 20px;
+    padding-top: 30px;
+
+    gap: 20px;
   }
 
+  .desktop-icon {
+    width: 95px;
+  }
+
+  .desktop-icon-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .desktop-icon-label {
+    font-size: 12px;
+  }
+
+
+  /* ------------------------------
+     GENERAL WINDOWS
+  ------------------------------ */
+
   .window {
-    top: 10%;
-    left: 50%;
-    width: 88vw;
-    transform: translateX(-50%);
+    max-width: calc(100vw - 170px);
+    max-height: calc(
+      100vh -
+      var(--topbar-height) -
+      var(--taskbar-height) -
+      30px
+    );
+  }
+
+
+  /* ------------------------------
+     WELCOME
+  ------------------------------ */
+
+  .welcome-window {
+    width: min(4800px, 55vw);
+
+    left: 160px;
+    top: 50px;
+  }
+
+  .welcome-content {
+    min-height: 330px;
+    padding: 34px 30px 28px;
+  }
+
+  .welcome-name-row h1 {
+    font-size: 62px;
+  }
+
+
+  /* ------------------------------
+     PROJECTS
+  ------------------------------ */
+
+  .work-window {
+    width: min(520px, 58vw);
+
+    left: 260px;
+    top: 65px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 28px 20px;
+  }
+
+
+  .project-folder {
+    min-height: 125px;
+  }
+
+  .folder-art {
+    width: 105px;
+    height: 72px;
+  }
+
+  .project-name {
+    font-size: 12px;
+  }
+
+
+  /* ------------------------------
+     TOOLBAR
+  ------------------------------ */
+
+  .work-search {
+    width: 170px;
+  }
+
+
+  /* ------------------------------
+     TASKBAR
+  ------------------------------ */
+
+  .taskbar {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .task-tab {
-    display: none;
+    min-width: 0;
   }
 
-  .taskbar {
-    padding: 7px 10px;
-  }
-
-  .taskbar-right {
-    gap: 9px;
-  }
 }
+
+/* ==================================================
+   MOBILE
+   720px AND BELOW
+================================================== */
 
 @media (max-width: 720px) {
 
-  .welcome-window {
-    top: 7%;
-    left: 50%;
-
-    width: 88vw;
-
-    transform: translateX(-50%);
+  :root {
+    --topbar-height: 48px;
+    --taskbar-height: 58px;
   }
 
+
+  /* ==================================================
+     TOP BAR
+  ================================================== */
+
+  .menu-bar {
+    padding: 0 12px;
+  }
+
+  .menu-left {
+    gap: 0;
+  }
+
+  .brand-button {
+    gap: 7px;
+    font-size: 14px;
+  }
+
+  .brand-heart {
+    width: 24px;
+    height: 24px;
+
+    font-size: 16px;
+  }
+
+
+  /* desktop menu is too crowded on phone */
+
+  .menu-nav {
+    display: none;
+  }
+
+
+  .menu-right {
+    gap: 8px;
+  }
+
+  .top-status {
+    display: none;
+  }
+
+  .top-date {
+    font-size: 11px;
+  }
+
+
+  /* ==================================================
+     DESKTOP
+  ================================================== */
+
+  .desktop {
+    overflow: hidden;
+  }
+
+
+  /* ==================================================
+     DECORATIONS
+  ================================================== */
+
+  .desktop-decoration {
+    opacity: 0.55;
+  }
+
+  .decoration-four,
+  .decoration-five,
+  .decoration-six {
+    display: none;
+  }
+
+
+/* ==================================================
+   DESKTOP ICONS — MOBILE
+================================================== */
+
+.desktop-icons {
+  position: relative;
+
+  width: 95px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-left: 10px;
+
+  padding-top: 25px;
+  padding-bottom: calc(var(--taskbar-height) + 20px);
+}
+
+.desktop-icon {
+  width: 85px;
+}
+
+.desktop-icon-image {
+  width: 60px;
+  height: 60px;
+}
+
+.desktop-icon-label {
+  font-size: 10px;
+}
+
+
+/* Trash stays in the same column */
+.desktop-trash {
+  grid-column: auto;
+}
+
+  /* ==================================================
+     ALL WINDOWS
+  ================================================== */
+
+ .window,
+.welcome-window,
+.work-window,
+.contact-window,
+.playground-window,
+.notes-window,
+.profile-window,
+.project-viewer {
+  top: 28px !important;
+  left: 96px !important;
+
+  width: calc(100% - 115px) !important;
+  max-width: 330px !important;
+
+  max-height: calc(
+    100% -
+    45px
+  );
+
+  transform: none !important;
+
+  border-radius: 12px;
+}
+
+  /* ==================================================
+     WINDOW HEADER
+  ================================================== */
+
+  .window-header {
+    min-height: 46px;
+
+    padding: 6px 7px 6px 12px;
+
+    cursor: default;
+  }
+
+.work-window {
+  width: calc(100% - 105px) !important;
+  max-width: 350px !important;
+}
+
+
+  .window-title {
+    gap: 7px;
+
+    font-size: 13px;
+  }
+
+
+  .window-controls {
+    gap: 4px;
+  }
+
+
+  .window-control {
+    width: 29px;
+    height: 29px;
+
+    font-size: 16px;
+  }
+
+
+  /* ==================================================
+     WELCOME
+  ================================================== */
 
   .welcome-content {
-    grid-template-columns: 1fr;
+    min-height: 0;
 
-    padding: 30px 24px 28px;
+    padding: 28px 22px 25px;
   }
 
 
-  .welcome-character {
-    display: none;
+  .welcome-small {
+    font-size: 17px;
+  }
+
+
+  .welcome-name-row {
+    gap: 9px;
+
+    margin-bottom: 14px;
   }
 
 
   .welcome-name-row h1 {
-    font-size: 54px;
+    font-size: clamp(45px, 16vw, 62px);
+
+    letter-spacing: 1px;
+  }
+
+
+  .welcome-heart {
+    width: 34px;
+    height: 34px;
+
+    border-width: 2px;
+
+    font-size: 21px;
   }
 
 
   .welcome-role {
-    font-size: 12px;
+    width: 100%;
+
+    padding: 7px 10px;
+
+    margin-bottom: 20px;
+
+    font-size: 11px;
+
+    text-align: center;
   }
 
 
   .speech-bubble {
     width: 100%;
+
+    padding: 15px;
+
+    font-size: 13px;
+
+    text-align: center;
   }
 
 
-  .speech-bubble::after {
-    display: none;
-  }
-
-}
-
-@media (max-width: 900px) {
-
-  .work-window {
-    width: min(560px, 78vw);
-
-    left: 280px;
-  }
-
-  .project-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-}
-
-@media (max-width: 720px) {
-
-  .work-window {
-    left: 50%;
-
-    width: 88vw;
-
-    transform:
-      translateX(-50%);
-  }
+  /* ==================================================
+     PROJECTS WINDOW
+  ================================================== */
 
   .work-toolbar {
     flex-wrap: wrap;
+
+    gap: 7px;
+
+    padding: 10px;
   }
+
+
+  .work-navigation button,
+  .view-button {
+    width: 30px;
+    height: 30px;
+  }
+
 
   .work-search {
     width: 100%;
 
     order: 3;
+
+    margin-left: 0;
   }
+
 
   .project-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+ grid-template-columns: repeat(2, 1fr);
 
-    gap: 22px;
+    gap: 15px 6px;
 
-    padding:
-      30px 20px;
+    padding: 24px 8px;
+
+    overflow-y: auto;
+
+    max-height:
+      calc(
+        100vh -
+        var(--topbar-height) -
+        var(--taskbar-height) -
+        150px
+      );
   }
 
+
+  .project-folder {
+    min-height: 108px;
+
+    padding: 8px 3px;
+  }
+
+
+.folder-art {
+  width: 88px;
+  height: 62px;
 }
 
-@media (max-width: 720px) {
-  .profile-window {
-    left: 50%;
-    width: 88vw;
-    transform: translateX(-50%);
+
+  .project-folder-tab {
+    width: 45px;
+    height: 18px;
+
+    top: -15px;
   }
 
-  .profile-content {
-    grid-template-columns: 1fr;
+
+  .folder-symbol {
+    width: 36px;
+    height: 36px;
+
+    font-size: 19px;
+  }
+
+
+  .project-name {
+max-width: 90px;
+  font-size: 10px;
+
     text-align: center;
   }
 
+
+  /* ==================================================
+     GENERAL APP CONTENT
+  ================================================== */
+
+  .window-content {
+    padding: 24px 20px;
+
+    overflow-y: auto;
+
+    max-height:
+      calc(
+        100vh -
+        var(--topbar-height) -
+        var(--taskbar-height) -
+        90px
+      );
+  }
+
+
+  .window-content h1 {
+    font-size: 30px;
+  }
+
+
+  .about-copy {
+    font-size: 14px;
+  }
+
+
+  .window-tags {
+    gap: 8px;
+  }
+
+
+  .window-tags span {
+    min-width: 0;
+
+    flex: 1 1 100px;
+
+    padding: 7px 8px;
+
+    font-size: 11px;
+  }
+
+
+  /* ==================================================
+     PROFILE / SECRET FILE
+  ================================================== */
+
+  .profile-content {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+
+    overflow-y: auto;
+  }
+
+
   .profile-row {
     grid-template-columns: 1fr;
+
     gap: 3px;
   }
+
+
+  /* ==================================================
+     PROJECT VIEWER
+  ================================================== */
+
+  .project-viewer {
+    height:
+      calc(
+        100% -
+        28px
+      ) !important;
+  }
+
+
+  .project-viewer-content {
+    height:
+      calc(
+        100% -
+        46px
+      );
+  }
+
+
+  #project-frame {
+    width: 100%;
+    height: 100%;
+  }
+
+/* ==================================================
+   ABOUT ME — MOBILE
+================================================== */
+
+.profile-window {
+  top: 65px !important;
+  left: 65px !important;
+
+  width: calc(100% - 80px) !important;
+  max-width: 350px !important;
+
+  height: auto !important;
+  max-height: none !important;
+
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+/* hide avatar + little heart */
+.profile-avatar-area {
+  display: none;
+}
+
+
+/* use the whole card width */
+.profile-content {
+  display: block;
+
+  padding: 22px 24px 24px;
+
+  text-align: left;
+
+  overflow: visible;
+}
+
+
+/* each information row */
+.profile-row {
+  display: grid;
+
+  grid-template-columns: 72px 1fr;
+
+  align-items: start;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+}
+
+
+/* NAME / ROLE / STATUS etc */
+.profile-label {
+  font-size: 7px;
+  letter-spacing: 1px;
+
+  padding-top: 2px;
+}
+
+
+/* actual information */
+.profile-value {
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+
+/* energy hearts */
+.profile-energy {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+
+/* matcha blocks */
+.profile-matcha {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+  /* ==================================================
+     TASKBAR
+  ================================================== */
+
+  .taskbar {
+    padding: 6px 8px;
+  }
+
+
+  .task-tab {
+    display: none;
+  }
+
+
+  .taskbar-left {
+    gap: 6px;
+  }
+
+
+  .taskbar-right {
+    gap: 7px;
+  }
+
+
+  .taskbar-time {
+    font-size: 11px;
+  }
+
 }

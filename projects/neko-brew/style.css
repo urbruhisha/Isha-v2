@@ -1,25 +1,28 @@
 @charset "UTF-8";
-/*	Aisha Fermin
-	==================================================
-	Table of Contents
-	==================================================
-		:: Typography
-
-
-/*	Typography
-	================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Nanum+Pen+Script&display=swap');
 
 /* RESET
 ================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Nanum+Pen+Script&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
+
+/* HIDE PAGE SCROLLBAR BUT KEEP SCROLLING */
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
 html{
     scroll-behavior:smooth;
+    max-width:100%;
+    overflow-x:hidden;
 }
 img{
     display:block;
@@ -76,7 +79,34 @@ p{
 }
 /* BODY
 ================================================== */
+
+body {
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.12;
+
+    background-image:
+        radial-gradient(circle, rgba(92, 64, 51, 0.18) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.55) 1px, transparent 1px);
+
+    background-size:
+        12px 12px,
+        18px 18px;
+
+    background-position:
+        0 0,
+        6px 6px;
+}
 body{
+    width:100%;
+    max-width:100%;
     background:var(--cream);
     color:var(--espresso);
     font-family:"Nanum Pen Script", cursive;
@@ -200,9 +230,9 @@ body{
 
 .hero-text {
     flex: 1;
-    z-index: 2;
+    position: relative;
+    z-index: 3;
 }
-
 .hero h1 {
     font-size: clamp(3rem, 6vw, 5rem);
     max-width: 620px;
@@ -235,8 +265,10 @@ body{
 }
 
 .hero-image {
-    flex: 1;
+    flex: 1.25;
     position: relative;
+    margin-left: -90px;
+    z-index: 1;
 }
 
 .hero-image::before {
@@ -254,13 +286,35 @@ body{
 }
 
 .hero-image img {
-    width: 100%;
-    max-width: 520px;
-    margin-left: auto;
-    border-radius: 45px;
-    box-shadow: 0 18px 40px rgba(92, 64, 51, .16);
+    width: 135%;
+    max-width: 720px;
+
+    margin-left: -30px;
+
     position: relative;
     z-index: 1;
+
+    /* remove the obvious image/card edges */
+    border-radius: 0;
+    box-shadow: none;
+
+    /* softly fade all four edges */
+    -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        black 48%,
+        rgba(0,0,0,.9) 60%,
+        rgba(0,0,0,.45) 76%,
+        transparent 95%
+    );
+
+    mask-image: radial-gradient(
+        ellipse at center,
+        black 48%,
+        rgba(0,0,0,.9) 60%,
+        rgba(0,0,0,.45) 76%,
+        transparent 95%
+    );
+
     animation: float 5s ease-in-out infinite;
 }
 
@@ -274,6 +328,22 @@ body{
 }
 /* CATEGORIES
 ==========================================*/
+.category-card,
+.drink-card,
+.bakery-card,
+.review-card {
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.92),
+            rgba(255,255,255,.92)
+        ),
+        radial-gradient(circle, rgba(92,64,51,.05) 1px, transparent 1px);
+
+    background-size:
+        auto,
+        14px 14px;
+}
+
 .categories {
     padding: 40px 0 90px;
 }
@@ -314,10 +384,10 @@ body{
     transform: rotate(-8deg) scale(1.08);
 }
 .category-card img {
-    width: 90px;
-    height: 90px;
+    width: 200px;
+    height: 200px;
     object-fit: contain;
-    margin: 0 auto 20px;
+    margin: 0 auto 10px;
     transition: .4s ease;
 }
 .category-card h2 {
@@ -363,9 +433,11 @@ body{
 }
 
 .drink-card img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
+    width: 200px;
+    height: 280px;
+    object-fit: contain;
+    margin: 20px auto 10px;
+    transition: .4s ease;
 }
 
 .drink-info {
@@ -396,7 +468,7 @@ body{
     color: var(--coffee);
     font-size: 1.6rem;
     font-weight: bold;
-    font-weight: bold; }
+}
 
 /* STORY
 ==========================================*/
@@ -421,6 +493,23 @@ body{
     position: relative;
     z-index: 2;
     animation: float 5s ease-in-out infinite;
+
+    /* soft faded edges */
+    -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        black 52%,
+        rgba(0,0,0,.9) 64%,
+        rgba(0,0,0,.45) 78%,
+        transparent 96%
+    );
+
+    mask-image: radial-gradient(
+        ellipse at center,
+        black 52%,
+        rgba(0,0,0,.9) 64%,
+        rgba(0,0,0,.45) 78%,
+        transparent 96%
+    );
 }
 .story-text {
     flex: 1;
@@ -477,9 +566,24 @@ body{
 /* BAKERY
 ==========================================*/
 .bakery {
-    padding: 100px 0;
-    background: var(--beige);
-    position: relative;
+    padding: 110px 0 130px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.35) 0 2px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(92,64,51,.06) 0 1px,
+            transparent 1px
+        ),
+        var(--beige);
+
+    background-size:
+        28px 28px,
+        22px 22px;
 }
 .bakery-grid {
     display: grid;
@@ -489,7 +593,6 @@ body{
 }
 .bakery-card {
     background: var(--white);
-    border-radius: 35px;
     border-radius: var(--radius);
     padding: 22px;
     text-align: center;
@@ -500,7 +603,7 @@ body{
 }
 .bakery-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 18px 40px rgba(92, 64, 51, .16)
+    box-shadow: 0 18px 40px rgba(92, 64, 51, .16);
 }
 .bakery-card img {
     width: 100%;
@@ -514,7 +617,7 @@ body{
 }
 .bakery-info{
     padding-top: 15px;
-    border-top:2px dashed rgba(92, 64, 51, .15)
+    border-top:2px dashed rgba(92, 64, 51, .15);
 }
 .bakery-info h3{
     margin-bottom:10px;
@@ -542,17 +645,7 @@ body{
 .reviews {
     padding: 110px 0;
     background: var(--cream);
-    overflow: hidden;
-    overflow-x: hidden;
     scroll-behavior: smooth;
-}
-.reviews-slider {
-    display: flex;
-    gap: 28px;
-    overflow-x: auto;
-    padding: 20px 5px 25px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
 }
 .reviews-slider::-webkit-scrollbar {
     display: none;
@@ -607,15 +700,18 @@ body{
     display: flex;
     align-items: center;
     gap: 20px;
+    min-width:0;
 }
 .reviews-slider {
     display: flex;
+    flex: 1;
     gap: 28px;
     overflow: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    scrollbar-width: none;
     padding: 20px 5px 25px;
-    flex: 1;
+    min-width:0;
 }
 .review-arrow {
     position: absolute;
@@ -639,10 +735,11 @@ body{
     transform: translateY(-50%) scale(.95);
 }
 .review-arrow.prev {
-    left: -70px;
+    left: 10px;
 }
+
 .review-arrow.next {
-    right: -70px;
+    right: 10px;
 }
 /* FOOTER
 ==========================================*/
@@ -777,48 +874,6 @@ body{
         transform: scale(1);
     }
 }
-/* GLOBAL SECTION SYSTEM
-==========================================*/
-section {
-    padding: 100px 0;
-}
-.section-soft {
-    background: var(--beige);
-}
-.section-cream {
-    background: var(--cream);
-}
-/* BUTTONS
-==========================================*/
-.btn,
-.order-btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 999px;
-    font-family: "Gloria Hallelujah", cursive;
-    transition: var(--transition);
-}
-.primary-btn,
-.order-btn {
-    background: var(--espresso);
-    color: var(--cream);
-}
-.secondary-btn {
-    background: transparent;
-    color: var(--espresso);
-    border: 2px solid var(--espresso);
-}
-.btn:hover,
-.order-btn:hover {
-    transform: translateY(-3px);
-}
-.primary-btn:hover,
-.order-btn:hover {
-    background: var(--coffee);
-}
-.secondary-btn:hover {
-    background: var(--latte);
-}
 /* IMAGES
 ==========================================*/
 .rounded-img {
@@ -838,4 +893,645 @@ section {
     transform: translateY(-8px);
     box-shadow: 0 16px 35px rgba(92, 64, 51, 0.15);
 
+}
+
+/* =========================================
+   NEKO BREW CUTE DETAILS
+========================================= */
+
+/* tiny paw accents */
+.hero .container::after {
+    content: "🐾";
+    position: absolute;
+    bottom: 28px;
+    left: 32px;
+    font-size: 1.4rem;
+    opacity: .18;
+    transform: rotate(-12deg);
+}
+
+.categories::before {
+    content: "🐾";
+    position: absolute;
+    left: 6%;
+    top: 18%;
+    font-size: 1.3rem;
+    opacity: .12;
+    transform: rotate(15deg);
+}
+
+/* little sparkle accents */
+.categories,
+.popular-drinks,
+.story,
+.bakery,
+.reviews {
+    position: relative;
+}
+
+.popular-drinks::before {
+    content: "✦";
+    position: absolute;
+    right: 8%;
+    top: 12%;
+    color: var(--matcha);
+    font-size: 1.6rem;
+    opacity: .22;
+}
+
+.story::before {
+    content: "✦";
+    position: absolute;
+    left: 7%;
+    top: 16%;
+    color: var(--coffee);
+    font-size: 1.4rem;
+    opacity: .18;
+}
+
+/* category card personality */
+.category-card {
+    transform-origin: center;
+}
+
+.category-card:nth-child(1):hover {
+    transform: translateY(-10px) rotate(-1deg);
+}
+
+.category-card:nth-child(2):hover {
+    transform: translateY(-10px) rotate(1deg);
+}
+
+.category-card:nth-child(3):hover {
+    transform: translateY(-10px) rotate(-1deg);
+}
+
+/* tiny card wiggle */
+.category-card img {
+    transition: transform .35s ease;
+}
+
+.category-card:hover img {
+    transform: rotate(-6deg) scale(1.07);
+}
+
+/* cute button press */
+.btn:active,
+.order-btn:active {
+    transform: translateY(1px) scale(.98);
+}
+
+/* softer handmade feel */
+.category-card,
+.drink-card,
+.story-text,
+.bakery-card,
+.review-card {
+    outline: 1px solid rgba(92, 64, 51, .035);
+    outline-offset: -5px;
+}
+
+/* ==================================================
+   MEDIUM / TABLET
+   ================================================== */
+
+@media (max-width: 1024px) {
+
+    .container {
+        width: min(92%, 900px);
+    }
+
+    /* HEADER */
+    .site-header .container {
+        gap: 20px;
+    }
+
+    .main-nav {
+        gap: 18px;
+        font-size: 19px;
+    }
+
+    .order-btn {
+        padding: 10px 20px;
+    }
+
+
+    /* HERO */
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero .container {
+        min-height: auto;
+        padding: 55px 45px;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem, 6vw, 4rem);
+    }
+
+    .hero-text > p:last-of-type {
+        font-size: 1.35rem;
+    }
+
+    .hero-image {
+        margin-left: -60px;
+    }
+
+    .hero-image img {
+        width: 125%;
+        max-width: 600px;
+    }
+
+
+    /* CATEGORIES */
+    .categories .container {
+        gap: 22px;
+    }
+
+    .category-card {
+        padding: 30px 20px;
+    }
+
+    .category-card img {
+        width: 170px;
+        height: 170px;
+    }
+
+
+    /* DRINKS */
+    .drink-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+
+    .drink-card {
+        height: 540px;
+    }
+
+
+    /* STORY */
+    .story .container {
+        gap: 45px;
+    }
+
+    .story-text {
+        padding: 40px;
+    }
+
+    .story-image img {
+        max-width: 380px;
+    }
+
+
+    /* BAKERY */
+    .bakery {
+        padding: 110px 0 130px;
+    }
+
+    .bakery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .bakery-card {
+        padding: 18px;
+    }
+
+    .bakery-card img {
+        height: 200px;
+    }
+
+
+    /* REVIEWS */
+    .review-card {
+        flex: 0 0 320px;
+    }
+
+
+    /* FOOTER */
+    .site-footer .container {
+        grid-template-columns: 1.3fr 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 700px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+
+    /* HEADER */
+    .site-header {
+        padding: 16px 0;
+    }
+
+    .site-header .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        font-size: 1.7rem;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        font-size: 18px;
+    }
+
+    .order-btn {
+        display: none;
+    }
+
+
+    /* HERO */
+    .hero {
+        padding: 35px 0 50px;
+    }
+
+    .hero .container {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 40px 25px;
+        gap: 20px;
+        border-radius: 30px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 12vw, 3.5rem);
+        margin-inline: auto;
+    }
+
+    .hero-text > p:last-of-type {
+        max-width: 100%;
+        font-size: 1.3rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 28px;
+    }
+
+    .hero-image {
+        width: 100%;
+        margin-left: 0;
+        margin-top: -10px;
+    }
+
+.hero-image img {
+    width: 92%;
+    max-width: 340px;
+    margin: 0 auto;
+
+    -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        black 25%,
+        rgba(0,0,0,.95) 38%,
+        rgba(0,0,0,.8) 50%,
+        rgba(0,0,0,.6) 62%,
+        rgba(0,0,0,.4) 72%,
+        rgba(0,0,0,.22) 82%,
+        rgba(0,0,0,.08) 90%,
+        transparent 100%
+    );
+
+    mask-image: radial-gradient(
+        ellipse at center,
+        black 25%,
+        rgba(0,0,0,.95) 38%,
+        rgba(0,0,0,.8) 50%,
+        rgba(0,0,0,.6) 62%,
+        rgba(0,0,0,.4) 72%,
+        rgba(0,0,0,.22) 82%,
+        rgba(0,0,0,.08) 90%,
+        transparent 100%
+    );
+}
+
+
+    /* SECTION HEADINGS */
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 2.4rem;
+    }
+
+
+    /* CATEGORIES */
+    .categories {
+        padding: 30px 0 70px;
+    }
+
+.categories .container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.category-card {
+    padding: 18px 8px;
+    border-radius: 22px;
+}
+
+.category-card img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 8px;
+}
+
+
+.category-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.category-card p {
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+    /* POPULAR DRINKS */
+    .popular-drinks {
+        padding: 70px 0;
+    }
+
+    .drink-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.drink-card {
+    height: auto;
+    min-height: 0;
+    border-radius: 22px;
+}
+
+.drink-card img {
+    width: 90px;
+    height: 120px;
+    margin: 15px auto 5px;
+}
+
+.drink-info {
+    padding: 12px 8px 16px;
+}
+
+.drink-info h3 {
+    font-size: 1.15rem;
+    line-height: 1.2;
+}
+
+.drink-info p {
+    font-size: .9rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.drink-info span {
+    font-size: 1.2rem;
+}
+
+.drink-tag {
+    font-size: .8rem;
+    padding: 3px 8px;
+}
+
+.favorite-btn {
+    width: 32px;
+    height: 32px;
+    top: 10px;
+    right: 10px;
+    font-size: 1rem;
+}
+
+
+    /* STORY */
+    .story {
+        padding: 70px 0;
+    }
+
+    .story .container {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .story-image {
+        width: 100%;
+    }
+
+    .story-image img {
+        max-width: 330px;
+    }
+
+    .story-text {
+        width: 100%;
+        padding: 35px 25px;
+        text-align: center;
+    }
+
+    .story-text p {
+        font-size: 1.3rem;
+    }
+
+    .story-text blockquote {
+        text-align: left;
+    }
+
+
+    /* BAKERY */
+    .bakery {
+        padding: 90px 0 110px;
+    }
+
+ .bakery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.bakery-card {
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 22px;
+}
+
+.bakery-card img {
+    width: 100%;
+    height: 110px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.bakery-info {
+    padding-top: 10px;
+}
+
+.bakery-info h3 {
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+.bakery-info span {
+    font-size: 1.1rem;
+}
+
+.bakery-card::before {
+    top: 10px;
+    left: 10px;
+    padding: 2px 7px;
+    font-size: .7rem;
+}
+
+
+    /* REVIEWS */
+    .reviews {
+        padding: 80px 0;
+    }
+
+    .reviews-wrapper {
+        gap: 0;
+    }
+
+    .reviews-slider {
+        gap: 18px;
+        padding-inline: 3px;
+    }
+
+    .review-card {
+        flex: 0 0 100%;
+    }
+
+    .review-arrow {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+
+    .review-arrow.prev {
+        left: -12px;
+    }
+
+    .review-arrow.next {
+        right: -12px;
+    }
+
+
+    /* FOOTER */
+    .site-footer {
+        padding-top: 70px;
+    }
+
+    .site-footer .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-links a {
+        margin-inline: auto;
+    }
+
+    .footer-bottom {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* FOOTER - MOBILE */
+.site-footer {
+    padding: 75px 0 22px;
+}
+
+.site-footer::before {
+    top: -30px;
+    height: 60px;
+    border-radius: 0 0 50% 50%;
+}
+
+.site-footer .container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
+
+    text-align: center;
+}
+
+
+/* brand takes full row */
+.footer-brand {
+    grid-column: 1 / -1;
+}
+
+.footer-brand h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.footer-brand p {
+    font-size: 1.05rem;
+}
+
+
+/* links + hours beside each other */
+.footer-links,
+.footer-hours {
+    min-width: 0;
+}
+
+.footer-links h3,
+.footer-hours h3 {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    margin: 0 auto 7px;
+    font-size: 1rem;
+}
+
+.footer-hours p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+/* copyright takes full bottom row */
+.footer-bottom {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    margin-top: 5px;
+
+    padding-top: 16px;
+}
+
+.footer-bottom p {
+    font-size: .85rem;
+    line-height: 1.4;
 }
