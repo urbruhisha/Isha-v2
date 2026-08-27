@@ -113,4 +113,194 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+/* ==================================================
+   ISHA V2 BOOT SCREEN
+================================================== */
 
+.isha-loader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #3a3939 0%,
+            #292828 45%,
+            #1d1c1c 100%
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 999999;
+
+    transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+}
+
+.isha-loader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.isha-loader-inner {
+    width: min(520px, 85%);
+
+    color: #d8d3cf;
+
+    font-family: "Courier New", monospace;
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(255,255,255,0.05)
+        );
+}
+
+.isha-loader-label {
+    margin-bottom: 24px;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+    opacity: 0.65;
+}
+
+.isha-loader-status p {
+    margin: 7px 0;
+
+    font-size: 13px;
+
+    opacity: 0;
+    transform: translateY(5px);
+
+    animation: ishaStatusIn 0.4s forwards;
+}
+
+.isha-loader-status p:nth-child(1) {
+    animation-delay: 0.25s;
+}
+
+.isha-loader-status p:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.isha-loader-status p:nth-child(3) {
+    animation-delay: 1.15s;
+}
+
+.isha-loader-status p:nth-child(4) {
+    animation-delay: 1.6s;
+}
+
+@keyframes ishaStatusIn {
+    to {
+        opacity: 0.7;
+        transform: translateY(0);
+    }
+}
+
+.isha-loader-track {
+    width: 100%;
+    height: 9px;
+
+    margin-top: 25px;
+    padding: 2px;
+
+    border: 1px solid rgba(96, 75, 88, 0.35);
+    border-radius: 2px;
+}
+
+.isha-loader-fill {
+    width: 0%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d983ac,
+            #b593cb
+        );
+
+    transition: width 0.08s linear;
+}
+
+.isha-loader-percent {
+    margin-top: 7px;
+
+    text-align: right;
+    font-size: 11px;
+
+    opacity: 0.55;
+}
+
+.isha-loader-welcome {
+    margin-top: 36px;
+
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(10px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.55s ease;
+}
+
+.isha-loader-welcome.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+.isha-loader-welcome h1 {
+    margin-bottom: 10px;
+
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.isha-loader-welcome p {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.isha-loader-note {
+    margin: 20px 0;
+
+    opacity: 0.6;
+}
+
+.isha-loader-enter {
+    padding: 11px 22px;
+
+    background: transparent;
+    color: #d8d3cf;
+
+    border: 1px solid rgba(216,211,207,0.4);
+    border-radius: 3px;
+
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.isha-loader-enter:hover {
+    transform: translateY(-2px);
+
+    background: #d8d3cf;
+    color: #242323;
+}

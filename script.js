@@ -2125,3 +2125,39 @@ if (bringWelcomeButton) {
   );
 
 }
+/* ==================================================
+   ISHA V2 BOOT SCREEN
+================================================== */
+
+const ishaLoader = document.getElementById("ishaLoader");
+const ishaLoaderFill = document.getElementById("ishaLoaderFill");
+const ishaLoaderPercent = document.getElementById("ishaLoaderPercent");
+const ishaLoaderWelcome = document.getElementById("ishaLoaderWelcome");
+const ishaLoaderEnter = document.getElementById("ishaLoaderEnter");
+
+let ishaProgress = 0;
+
+const ishaLoadingInterval = setInterval(() => {
+
+    ishaProgress += Math.floor(Math.random() * 7) + 3;
+
+    if (ishaProgress >= 100) {
+        ishaProgress = 100;
+
+        clearInterval(ishaLoadingInterval);
+
+        setTimeout(() => {
+            ishaLoaderWelcome.classList.add("is-visible");
+        }, 350);
+    }
+
+    ishaLoaderFill.style.width = ishaProgress + "%";
+    ishaLoaderPercent.textContent = ishaProgress + "%";
+
+}, 110);
+
+ishaLoaderEnter.addEventListener("click", () => {
+
+    ishaLoader.classList.add("is-hidden");
+
+});
