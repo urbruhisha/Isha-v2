@@ -1042,6 +1042,182 @@
 }
 
 /* ==================================================
+   SKILLS.EXE
+================================================== */
+
+.skills-window {
+  width: min(620px, 72vw);
+
+  top: 18%;
+  left: 38%;
+}
+
+
+.skills-window .window-header {
+  background: linear-gradient(
+    to bottom,
+    #cfe8f6,
+    #a9cfe5
+  );
+}
+
+
+/* CONTENT */
+
+.skills-content {
+  position: relative;
+
+  padding: 26px 32px 30px;
+
+  background:
+    linear-gradient(
+      rgba(85, 69, 63, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(85, 69, 63, 0.05) 1px,
+      transparent 1px
+    ),
+    var(--cream);
+
+  background-size: 24px 24px;
+}
+
+
+/* HEADING */
+
+.skills-heading {
+  margin-bottom: 22px;
+}
+
+.skills-small {
+  margin: 0 0 4px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: var(--brown-soft);
+}
+
+.skills-heading h2 {
+  margin: 0 0 5px;
+
+  font-size: 25px;
+
+  color: #5e8dab;
+}
+
+
+/* 3 X 3 GRID */
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px 28px;
+
+  max-width: 430px;
+
+  margin: 0 auto;
+}
+
+
+/* ITEMS */
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+
+  text-align: center;
+}
+
+.skill-icon {
+  width: 58px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  background: #cfe8f6;
+
+  border: 2px solid var(--brown);
+  border-radius: 9px;
+
+  box-shadow:
+    3px 3px 0 rgba(85, 69, 63, 0.10);
+
+  color: var(--brown);
+
+  font-family: "Courier New", monospace;
+  font-size: 18px;
+  font-weight: 700;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.skill-item:nth-child(2n) .skill-icon {
+  transform: rotate(1deg);
+}
+
+.skill-item:nth-child(3n) .skill-icon {
+  transform: rotate(-1deg);
+}
+
+.skill-item:hover .skill-icon {
+  transform:
+    translateY(-4px)
+    rotate(-2deg);
+
+  background: #b7d9ee;
+}
+
+.skill-item span {
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* DOODLES */
+
+.skills-doodle {
+  position: absolute;
+
+  pointer-events: none;
+}
+
+.skills-doodle-one {
+  top: 26px;
+  right: 34px;
+
+  color: #e9b855;
+}
+
+.skills-doodle-two {
+  right: 25px;
+  bottom: 22px;
+
+  color: #ef9caf;
+}
+
+.skills-doodle-three {
+  left: 20px;
+  top: 74px;
+
+  color: #7aaac7;
+}
+
+/* ==================================================
    SECRET PROFILE WINDOW
 ================================================== */
 
@@ -1409,7 +1585,58 @@
   background:
     #f8e4a9;
 }
-
 /* ==================================================
-   MOBILE
+   SKILLS.EXE — FINAL DESKTOP OVERRIDE
 ================================================== */
+
+.skills-window {
+  width: 560px;
+  height: auto;
+  max-height: none;
+
+  top: 16%;
+  left: 39%;
+}
+
+.skills-content {
+  height: auto;
+  min-height: 0;
+
+  padding: 22px 28px 28px;
+}
+
+
+/* 3 × 3 */
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px 24px;
+
+  width: 100%;
+  max-width: 390px;
+
+  margin: 18px auto 0;
+}
+
+
+/* smaller tiles */
+
+.skill-icon {
+  width: 54px;
+  height: 48px;
+
+  font-size: 17px;
+}
+
+
+.skill-item {
+  gap: 5px;
+}
+
+
+.skill-item span {
+  font-size: 7px;
+}
